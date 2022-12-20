@@ -30,9 +30,9 @@ class App extends Component {
                         <ErrorBoundary>
                             <CharList onCharSelected={this.onCharSelected} />
                         </ErrorBoundary>
-                        <ErrorBoundary>
+                        {/* <ErrorBoundary>
                             <CharInfo charId={this.state.selectedChar} />
-                        </ErrorBoundary>
+                        </ErrorBoundary> */}
                     </div>
                     <img className="bg-decoration" src={decoration} alt="vision" />
                 </main>
