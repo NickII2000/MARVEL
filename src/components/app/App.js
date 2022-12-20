@@ -23,16 +23,16 @@ class App extends Component {
             <div className="app">
                 <AppHeader />
                 <main>
-                    {/* <ErrorBoundary>
+                    <ErrorBoundary>
                         <RandomChar />
-                    </ErrorBoundary> */}
+                    </ErrorBoundary>
                     <div className="char__content">
                         <ErrorBoundary>
                             <CharList onCharSelected={this.onCharSelected} />
                         </ErrorBoundary>
-                        {/* <ErrorBoundary>
+                        <ErrorBoundary>
                             <CharInfo charId={this.state.selectedChar} />
-                        </ErrorBoundary> */}
+                        </ErrorBoundary>
                     </div>
                     <img className="bg-decoration" src={decoration} alt="vision" />
                 </main>
