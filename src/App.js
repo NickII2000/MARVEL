@@ -51,8 +51,10 @@ import './App.css';
 
 const Slider = (props) => {
 
-    const slideStateArray = useState();
-    console.log(slideStateArray);
+    // const slideStateArray = useState();
+    // console.log(slideStateArray);
+    const [slide, setSlide] = useState();
+    console.log(slide, setSlide);
 
     return (
         <Container>
