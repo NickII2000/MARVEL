@@ -1,5 +1,5 @@
-import {Component} from 'react';
-import {Container} from 'react-bootstrap';
+import { Component } from 'react';
+import { Container } from 'react-bootstrap';
 import './App.css';
 class Slider extends Component {
 
@@ -12,13 +12,13 @@ class Slider extends Component {
     }
 
     changeSlide = (i) => {
-        this.setState(({slide}) => ({
+        this.setState(({ slide }) => ({
             slide: slide + i
         }))
     }
 
     toggleAutoplay = () => {
-        this.setState(({autoplay}) => ({
+        this.setState(({ autoplay }) => ({
             autoplay: !autoplay
         }))
     }
@@ -28,15 +28,15 @@ class Slider extends Component {
             <Container>
                 <div className="slider w-50 m-auto">
                     <img className="d-block w-100" src="https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-eiffel-tower.jpg" alt="slide" />
-                    <div className="text-center mt-5">Active slide {this.state.slide} <br/> {this.state.autoplay ? 'auto' : null}</div>
+                    <div className="text-center mt-5">Active slide {this.state.slide} <br /> {this.state.autoplay ? 'auto' : null}</div>
                     <div className="buttons mt-3">
-                        <button 
+                        <button
                             className="btn btn-primary me-2"
-                            onClick={() => this.changeSlide(-1)}>-1</button>
-                        <button 
+                            onClick={() => this.changeSlide(-10)}>-1</button>
+                        <button
                             className="btn btn-primary me-2"
                             onClick={() => this.changeSlide(1)}>+1</button>
-                        <button 
+                        <button
                             className="btn btn-primary me-2"
                             onClick={this.toggleAutoplay}>toggle autoplay</button>
                     </div>
@@ -71,9 +71,9 @@ class Slider extends Component {
 
 
 function App() {
-  return (
-        <Slider/>
-  );
+    return (
+        <Slider />
+    );
 }
 
 export default App;
