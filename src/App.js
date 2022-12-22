@@ -35,7 +35,7 @@ class Slider extends Component {
                             onClick={() => this.changeSlide(-10)}>-1</button>
                         <button
                             className="btn btn-primary me-2"
-                            onClick={() => this.changeSlide(1)}>+1</button>
+                            onClick={() => this.changeSlide(10)}>+1</button>
                         <button
                             className="btn btn-primary me-2"
                             onClick={this.toggleAutoplay}>toggle autoplay</button>
