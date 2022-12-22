@@ -53,7 +53,7 @@ const Slider = (props) => {
 
     // const slideStateArray = useState();
     // console.log(slideStateArray);
-    const [slide, setSlide] = useState(0);
+    const [slide, setSlide] = useState(10);
     console.log(slide, setSlide);
 
     return (
@@ -63,17 +63,17 @@ const Slider = (props) => {
                 <div className="text-center mt-5">Active slide {slide} <br />
                     {/* {this.state.autoplay ? 'auto' : null} */}
                 </div>
-                <div className="buttons mt-3">
+                {/* <div className="buttons mt-3">
                     <button
                         className="btn btn-primary me-2"
-                        // onClick={() => this.changeSlide(-1)}>-1</button>
+                        onClick={() => this.changeSlide(-1)}>-1</button>
                     <button
                     className="btn btn-primary me-2"
-                    // onClick={() => this.changeSlide(1)}>+1</button>
+                    onClick={() => this.changeSlide(1)}>+1</button>
                 <button
                 className="btn btn-primary me-2"
-                        // onClick={this.toggleAutoplay}>toggle autoplay</button>
-                </div >
+                        onClick={this.toggleAutoplay}>toggle autoplay</button>
+                </div > */}
             </div >
         </Container >
     )
