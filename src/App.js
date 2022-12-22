@@ -1,6 +1,8 @@
 import { Component } from 'react';
 import { Container } from 'react-bootstrap';
 import './App.css';
+
+
 class Slider extends Component {
 
     constructor(props) {
