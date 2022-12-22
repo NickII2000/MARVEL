@@ -53,7 +53,7 @@ const Slider = (props) => {
 
     // const slideStateArray = useState();
     // console.log(slideStateArray);
-    const [slide, setSlide] = useState();
+    const [slide, setSlide] = useState(0);
     console.log(slide, setSlide);
 
     return (
