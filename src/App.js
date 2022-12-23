@@ -64,7 +64,6 @@ const Slider = (props) => {
         setAutoplay(autoplay => !autoplay);
     }
 
-
     return (
         <Container>
             <div className="slider w-50 m-auto">
