@@ -67,11 +67,11 @@ const Slider = (props) => {
     const [state, setState] = useState({ slide: 0, autoplay: false });
 
     function changeSlide(i) {
-        setState(state => ({ slide: state.slide + i, autoplay: state.autoplay }));
+        setState(state => ({ ...state, slide: state.slide + i }));
     }
 
     function toggleAutoplay() {
-        setState(state => ({ slide: state.slide, autoplay: !state.autoplay }));
+        setState(state => ({ ...state, autoplay: !state.autoplay }));
     }
 
     return (
