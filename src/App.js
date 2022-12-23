@@ -53,7 +53,14 @@ const Slider = (props) => {
 
     // const slideStateArray = useState();
     // console.log(slideStateArray);
-    const [slide, setSlide] = useState(0);
+
+    const calcValue = () => {
+        console.log('random');
+
+        return Math.random() * (50 - 1) + 1;
+    }
+
+    const [slide, setSlide] = useState(calcValue);
     const [autoplay, setAutoplay] = useState(false);
 
     function changeSlide(i) {
