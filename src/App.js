@@ -51,18 +51,27 @@ import './App.css';
 
 const Slider = (props) => {
 
-    // const slideStateArray = useState();
-    // console.log(slideStateArray);
-    const [slide, setSlide] = useState(0);
-    const [autoplay, setAutoplay] = useState(false);
+    // // const slideStateArray = useState();
+    // // console.log(slideStateArray);
+    // const [slide, setSlide] = useState(0);
+    // const [autoplay, setAutoplay] = useState(false);
+
+    // function changeSlide(i) {
+    //     setSlide(siude => slide + i);
+    // }
+
+    // function toggleAutoplay() {
+    //     setAutoplay(autoplay => !autoplay);
+    // }
+
     const [state, setState] = useState({ slide: 0, autoplay: false });
 
     function changeSlide(i) {
-        setSlide(siude => slide + i);
+        setState(state => ({ slide: state.slide + i, autoplay: state.autoplay }));
     }
 
     function toggleAutoplay() {
-        setAutoplay(autoplay => !autoplay);
+        setState(state => ({ slide: state.slide, autoplay: !state.autoplay }));
     }
 
     return (
