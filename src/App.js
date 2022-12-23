@@ -57,11 +57,11 @@ const Slider = (props) => {
     const [autoplay, setAutoplay] = useState(false);
 
     function changeSlide(i) {
-        setSlide(slide + i);
+        setSlide(siude => slide + i);
     }
 
     function toggleAutoplay() {
-        setAutoplay(!autoplay);
+        setAutoplay(autoplay => !autoplay);
     }
 
 
