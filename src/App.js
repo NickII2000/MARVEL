@@ -55,6 +55,7 @@ const Slider = (props) => {
     // console.log(slideStateArray);
     const [slide, setSlide] = useState(0);
     const [autoplay, setAutoplay] = useState(false);
+    const [state, setState] = useState({ slide: 0, autoplay: false });
 
     function changeSlide(i) {
         setSlide(siude => slide + i);
