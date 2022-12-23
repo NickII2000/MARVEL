@@ -60,7 +60,7 @@ const Slider = (props) => {
         return Math.random() * (50 - 1) + 1;
     }
 
-    const [slide, setSlide] = useState(calcValue);
+    const [slide, setSlide] = useState(calcValue());
     const [autoplay, setAutoplay] = useState(false);
 
     function changeSlide(i) {
