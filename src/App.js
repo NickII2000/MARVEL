@@ -57,7 +57,7 @@ const Slider = (props) => {
     const calcValue = () => {
         console.log('random');
 
-        return Math.random() * (100 - 1) + 1;
+        return Math.random() * (1000 - 1) + 1;
     }
 
     const [slide, setSlide] = useState(() => calcValue());
