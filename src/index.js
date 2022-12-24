@@ -6,6 +6,6 @@ import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 ReactDOM.render(
-  <App />,
+  <App counter={0} />,
   document.getElementById('root')
 );
