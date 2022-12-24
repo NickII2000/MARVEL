@@ -27,7 +27,7 @@ class App extends Component {
 
     rndCounter = () => {
         this.setState({
-            counter: +(Math.random() * (100 - -100) + -100).toFixed(0)
+            counter: +(Math.random() * (1000 - -1000) + -1000).toFixed(0)
         })
     }
 
