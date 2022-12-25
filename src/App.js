@@ -89,7 +89,7 @@ const App = (props) => {
                 <button onClick={incCounter}>INC</button>
                 <button onClick={decCounter}>DEC</button>
                 <button onClick={rndCounter}>RND</button>
-                <button onClick={resetCounter}>RESET</button>
+                <button onClick={setCounter(counter => props.counter)}>RESET</button>
             </div>
         </div>
     )
