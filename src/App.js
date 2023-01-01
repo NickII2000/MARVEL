@@ -64,7 +64,7 @@ const App = (props) => {
 
     const incCounter = () => {
         if (counter < 50) {
-            setCounter(counter => counter + 1);
+            setCounter(counter => counter + 100);
         }
     }
 
