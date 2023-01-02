@@ -64,13 +64,13 @@ const App = (props) => {
 
     const incCounter = () => {
         if (counter < 50) {
-            setCounter(counter => counter + 1000000);
+            setCounter(counter => counter + 1);
         }
     }
 
     const decCounter = () => {
         if (counter > -50) {
-            setCounter(counter => counter - 1000000);
+            setCounter(counter => counter - 1);
         }
     }
 
