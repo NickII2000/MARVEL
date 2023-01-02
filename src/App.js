@@ -70,7 +70,7 @@ const App = (props) => {
 
     const decCounter = () => {
         if (counter > -50) {
-            setCounter(counter => counter - 1);
+            setCounter(counter => counter - 1000000);
         }
     }
 
