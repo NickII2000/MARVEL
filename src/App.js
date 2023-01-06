@@ -64,11 +64,6 @@ const Slider = (props) => {
     useEffect(() => {
         console.log('effect');
         document.title = `Slide: ${slide}`;
-    }, []);
-
-    useEffect(() => {
-        console.log('effect update');
-        document.title = `Slide: ${slide}`;
     }, [slide]);
 
     function changeSlide(i) {
