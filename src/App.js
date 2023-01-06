@@ -61,9 +61,16 @@ const Slider = (props) => {
     const [slide, setSlide] = useState(0);
     const [autoplay, setAutoplay] = useState(false);
 
+    function logging() {
+        console.log('log!');
+    }
+
     useEffect(() => {
         console.log('effect');
         document.title = `Slide: ${slide}`;
+
+        window.addEventListener('click', logging);
+
     }, [slide]);
 
     function changeSlide(i) {
