@@ -17,6 +17,10 @@ class Slider extends Component {
         document.title = `Slide: ${this.state.slide}`;
     }
 
+    componentDidUpdate() {
+        document.title = `Slide: ${this.state.slide}`;
+    }
+
     changeSlide = (i) => {
         this.setState(({ slide }) => ({
             slide: slide + i
