@@ -77,6 +77,10 @@ const Slider = (props) => {
 
     }, [slide]);
 
+    useEffect(() => {
+        console.log('autoplay');
+    }, [autoplay]);
+
     function changeSlide(i) {
         setSlide(siude => slide + i);
     }
