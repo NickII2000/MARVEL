@@ -59,8 +59,6 @@ const Slider = (props) => {
     // const slideStateArray = useState();
     // console.log(slideStateArray);
 
-
-
     const [slide, setSlide] = useState(() => calcValue());
     const [autoplay, setAutoplay] = useState(false);
 
