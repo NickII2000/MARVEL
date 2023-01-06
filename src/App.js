@@ -71,6 +71,10 @@ const Slider = (props) => {
 
         window.addEventListener('click', logging);
 
+        return () => {
+            window.removeEventListener('click', logging);
+        }
+
     }, [slide]);
 
     function changeSlide(i) {
