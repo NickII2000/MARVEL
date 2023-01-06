@@ -62,7 +62,7 @@ const Slider = (props) => {
     const [autoplay, setAutoplay] = useState(false);
 
     useEffect(() => {
-        document.title = `Slide: ${this.state.slide}`;
+        document.title = `Slide: ${slide}`;
     });
 
     function changeSlide(i) {
