@@ -1,6 +1,46 @@
 import { Component, useState } from 'react';
 import './app.css';
 
+const App = (props) => {
+
+    const [counter, setCounter] = useState(props.counter);
+
+    const incCounter = () => {
+        if (counter < 50) {
+            setCounter(counter => counter + 1);
+        }
+    }
+
+    const decCounter = () => {
+        if (counter > -50) {
+            setCounter(counter => counter - 1);
+        }
+    }
+
+    const rndCounter = () => {
+        setCounter(counter => +(Math.random() * (50 - -50) + -50).toFixed(0));
+    }
+
+    const resetCounter = () => {
+        setCounter(counter => props.counter);
+    }
+
+    return (
+        <div className="app">
+            <div className="counter">{counter}</div>
+            <div className="controls">
+                <button onClick={incCounter}>INC</button>
+                <button onClick={decCounter}>DEC</button>
+                <button onClick={rndCounter}>RND</button>
+                <button onClick={resetCounter}>RESET</button>
+            </div>
+        </div>
+    )
+}
+
+export default App;
+
+
 // class App extends Component {
 //     constructor(props) {
 //         super(props);
@@ -57,42 +97,3 @@ import './app.css';
 // 2) INC и DEC увеличивают и уменьшают счетчик соответственно на 1. Без ограничений, но можете добавить границу в -50/50. По достижению границы ничего не происходит
 // 3) RND изменяет счетчик в случайное значение от -50 до 50. Конструкцию можете прогуглить за 20 секунд :) Не зависит от предыдущего состояния
 // 4) RESET сбрасывает счетчик в 0 или 
-
-const App = (props) => {
-
-    const [counter, setCounter] = useState(props.counter);
-
-    const incCounter = () => {
-        if (counter < 50) {
-            setCounter(counter => counter + 1);
-        }
-    }
-
-    const decCounter = () => {
-        if (counter > -50) {
-            setCounter(counter => counter - 1);
-        }
-    }
-
-    const rndCounter = () => {
-        setCounter(counter => +(Math.random() * (50 - -50) + -50).toFixed(0));
-    }
-
-    const resetCounter = () => {
-        setCounter(counter => props.counter);
-    }
-
-    return (
-        <div className="app">
-            <div className="counter">{counter}</div>
-            <div className="controls">
-                <button onClick={incCounter}>INC</button>
-                <button onClick={decCounter}>DEC</button>
-                <button onClick={rndCounter}>RND</button>
-                <button onClick={resetCounter}>RESET</button>
-            </div>
-        </div>
-    )
-}
-
-export default App;
