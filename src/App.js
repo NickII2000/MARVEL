@@ -110,8 +110,13 @@ const Slider = (props) => {
 
 
 function App() {
+    const [slider, setSlider] = useState(true);
+
     return (
-        <Slider />
+        <>
+            <button onClick={() => setSlider(false)}>Click</button>
+            {slider ? <Slider /> : null}
+        </>
     );
 }
 
