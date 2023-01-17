@@ -102,7 +102,7 @@ const Slider = (props) => {
                         onClick={() => changeSlide(-17)}>-1</button>
                     <button
                         className="btn btn-primary me-2"
-                        onClick={() => changeSlide(1)}>+1</button>
+                        onClick={() => changeSlide(17)}>+1</button>
                     <button
                         className="btn btn-primary me-2"
                         onClick={toggleAutoplay}>toggle autoplay</button>
