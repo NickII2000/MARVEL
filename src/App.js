@@ -50,7 +50,7 @@ const Slider = (props) => {
                 {
                     getSomeImages().map((url, i) => {
                         return (
-                            <img key={i} className="d-block w-150" src={url} alt="slide" />
+                            <img key={i} className="d-block w-50" src={url} alt="slide" />
                         )
                     })
                 }
