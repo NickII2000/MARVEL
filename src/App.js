@@ -6,7 +6,7 @@ const getSomeImages = () => {
     console.log('fetching');
     return [
         "https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-eiffel-tower.jpg",
-        "dhttps://www.planetware.com/arizona/from-las-vegas-to-antelope-canyon-best-ways-to-get-there.htm"
+        "https://www.planetware.com/photos-tiles/usa-best-places-miami-5.jpg"
     ]
 }
 
