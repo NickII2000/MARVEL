@@ -94,7 +94,7 @@ const Slide = ({ getSomeImages }) => {
 
     return (
         <>
-            {images.map(url, i)}
+            {images.map((url, i) => <img key={i} className="d-block w-50" src={url} alt="slide" />)}
         </>
     )
 }
