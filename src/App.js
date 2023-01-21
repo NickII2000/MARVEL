@@ -107,7 +107,7 @@ function App() {
 
     return (
         <>
-            <button onClick={() => setSlider(() => !slider)}>Click</button>
+            <button onClick={() => setSlider((slider) => !slider)}>Click</button>
             {slider ? <Slider /> : null}
         </>
     );
