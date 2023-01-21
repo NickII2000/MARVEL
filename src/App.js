@@ -85,6 +85,19 @@ const Slider = (props) => {
     )
 }
 
+const Slide = ({ getSomeImages }) => {
+    const [images, setImages] = useState([]);
+
+    useEffect(() => {
+        setImages(getSomeImages());
+    }, [getSomeImages]);
+
+    return (
+        <>
+            {images.map(url, i)}
+        </>
+    )
+}
 
 function App() {
     const [slider, setSlider] = useState(true);
