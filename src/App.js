@@ -56,13 +56,16 @@ const Slider = (props) => {
     return (
         <Container>
             <div className="slider w-50 m-auto">
-                {
+                {/* {
                     getSomeImages().map((url, i) => {
                         return (
                             <img key={i} className="d-block w-50" src={url} alt="slide" />
                         )
                     })
-                }
+                } */}
+
+                <Slide getSomeImages={getSomeImages} />
+
                 <div className="text-center mt-5">Active slide {slide} <br />
                     {autoplay ? 'auto' : null}
                 </div>
