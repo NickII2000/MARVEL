@@ -8,7 +8,7 @@ const getSomeImages = () => {
         "https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-eiffel-tower.jpg",
         "https://www.planetware.com/photos-large/USNY/usa-best-places-miami.jpg",
         "https://www.planetware.com/wpimages/2022/09/best-luxury-all-inclusive-resorts-world-conrad-maldives-rangali-island-the-maldives.jpg"
-    ]
+    ];
 }
 
 const Slider = (props) => {
