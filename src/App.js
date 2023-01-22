@@ -72,11 +72,11 @@ const Slider = (props) => {
                 <div className="buttons mt-3">
                     <button
                         className="btn btn-primary me-2"
-                        onClick={() => changeSlide(-111)}>-1
+                        onClick={() => changeSlide(-1)}>-1
                     </button>
                     <button
                         className="btn btn-primary me-2"
-                        onClick={() => changeSlide(111)}>+1
+                        onClick={() => changeSlide(1)}>+1
                     </button>
                     <button
                         className="btn btn-primary me-2"
