@@ -58,6 +58,8 @@ const Slider = (props) => {
         setAutoplay(autoplay => !autoplay);
     }
 
+    count total = countTotal(slide);
+
     return (
         <Container>
             <div className="slider w-50 m-auto">
