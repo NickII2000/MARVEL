@@ -11,6 +11,8 @@ import './App.css';
 //     ];
 // }
 
+
+
 const Slider = (props) => {
 
     const [slide, setSlide] = useState(0);
