@@ -49,7 +49,9 @@ const Slider = (props) => {
         setAutoplay(autoplay => !autoplay);
     }
 
-    const total = countTotal(slide);
+    const total = useMemo(() => {
+        return countTotal(slide);
+    });
 
     return (
         <Container>
