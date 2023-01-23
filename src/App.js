@@ -57,6 +57,10 @@ const Slider = (props) => {
         color: slide > 4 ? 'red' : 'block'
     };
 
+    useEffect(() => {
+        console.log('styles!')
+    }, [style]);
+
     return (
         <Container>
             <div className="slider w-50 m-auto">
