@@ -11,7 +11,10 @@ import './App.css';
 //     ];
 // }
 
-
+const countTotal = (num) => {
+    console.log('counting...');
+    return num + 10;
+}
 
 const Slider = (props) => {
 
