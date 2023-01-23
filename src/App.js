@@ -53,6 +53,7 @@ const Slider = (props) => {
         return countTotal(slide);
     }, [slide]);
 
+
     return (
         <Container>
             <div className="slider w-50 m-auto">
