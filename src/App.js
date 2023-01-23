@@ -51,7 +51,7 @@ const Slider = (props) => {
 
     const total = useMemo(() => {
         return countTotal(slide);
-    }, [slide]);
+    }, []);
 
     return (
         <Container>
