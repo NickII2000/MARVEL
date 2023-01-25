@@ -4,7 +4,7 @@ import './App.css';
 
 const countTotal = (num) => {
     console.log('counting...');
-    return num + 1000;
+    return num + 10001000;
 }
 
 const Slider = (props) => {
