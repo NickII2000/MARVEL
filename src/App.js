@@ -1,8 +1,9 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import './App.css';
 
 const Form = () => {
+    const [text, setText] = useState('');
 
     const myRef = useRef(null);
 
