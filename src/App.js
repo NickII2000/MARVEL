@@ -20,7 +20,7 @@ const Form = () => {
                 </div>
                 <div className="mb-3">
                     <label htmlFor="exampleFormControlTextarea1" className="form-label">Example textarea</label>
-                    <textarea onClick={() => myRef.current + 1} className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <textarea onClick={() => myRef.current++} className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                 </div>
             </form>
         </Container>
