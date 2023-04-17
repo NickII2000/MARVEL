@@ -1,114 +1,98 @@
 import { Component, useState } from 'react';
-import { Container } from 'react-bootstrap';
-import './App.css';
+import './app.css';
 
-
-// class Slider extends Component {
-
+// class App extends Component {
 //     constructor(props) {
 //         super(props);
 //         this.state = {
-//             autoplay: false,
-//             slide: 0
+//             counter: this.props.counter
 //         }
 //     }
 
-//     changeSlide = (i) => {
-//         this.setState(({ slide }) => ({
-//             slide: slide + i
-//         }))
+//     incCounter = () => {
+//         if (this.state.counter < 50) {
+//             this.setState(state => ({
+//                 counter: state.counter + 1
+//             }))
+//         }
 //     }
 
-//     toggleAutoplay = () => {
-//         this.setState(({ autoplay }) => ({
-//             autoplay: !autoplay
-//         }))
+//     decCounter = () => {
+//         if (this.state.counter > -50) {
+//             this.setState(state => ({
+//                 counter: state.counter - 1
+//             }))
+//         }
+//     }
+
+//     rndCounter = () => {
+//         this.setState({
+//             counter: +(Math.random() * (50 - -50) + -50).toFixed(0)
+//         })
+//     }
+
+//     resetCounter = () => {
+//         this.setState({
+//             counter: this.props.counter
+//         })
 //     }
 
 //     render() {
+//         const { counter } = this.state;
+
 //         return (
-//             <Container>
-//                 <div className="slider w-50 m-auto">
-//                     <img className="d-block w-100" src="https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-eiffel-tower.jpg" alt="slide" />
-//                     <div className="text-center mt-5">Active slide {this.state.slide} <br /> {this.state.autoplay ? 'auto' : null}</div>
-//                     <div className="buttons mt-3">
-//                         <button
-//                             className="btn btn-primary me-2"
-//                             onClick={() => this.changeSlide(-1)}>-1</button>
-//                         <button
-//                             className="btn btn-primary me-2"
-//                             onClick={() => this.changeSlide(1)}>+1</button>
-//                         <button
-//                             className="btn btn-primary me-2"
-//                             onClick={this.toggleAutoplay}>toggle autoplay</button>
-//                     </div>
+//             <div className="app">
+//                 <div className="counter">{counter}</div>
+//                 <div className="controls">
+//                     <button onClick={this.incCounter}>INC</button>
+//                     <button onClick={this.decCounter}>DEC</button>
+//                     <button onClick={this.rndCounter}>RND</button>
+//                     <button onClick={this.resetCounter}>RESET</button>
 //                 </div>
-//             </Container>
+//             </div>
 //         )
 //     }
 // }
+// 1) Начальное значение счетчика должно передаваться через props
+// 2) INC и DEC увеличивают и уменьшают счетчик соответственно на 1. Без ограничений, но можете добавить границу в -50/50. По достижению границы ничего не происходит
+// 3) RND изменяет счетчик в случайное значение от -50 до 50. Конструкцию можете прогуглить за 20 секунд :) Не зависит от предыдущего состояния
+// 4) RESET сбрасывает счетчик в 0 или 
 
+const App = (props) => {
 
-const Slider = (props) => {
+    const [counter, setCounter] = useState(props.counter);
 
-    // const slideStateArray = useState();
-    // console.log(slideStateArray);
-
-    const calcValue = () => {
-        console.log('random');
-
-        return Math.random() * (50 - 1) + 1;
+    const incCounter = () => {
+        if (counter < 50) {
+            setCounter(counter => counter + 1);
+        }
     }
 
-    const [slide, setSlide] = useState(() => calcValue());
-    const [autoplay, setAutoplay] = useState(false);
-
-    function changeSlide(i) {
-        setSlide(siude => slide + i);
+    const decCounter = () => {
+        if (counter > -50) {
+            setCounter(counter => counter - 1);
+        }
     }
 
-    function toggleAutoplay() {
-        setAutoplay(autoplay => !autoplay);
+    const rndCounter = () => {
+        setCounter(counter => +(Math.random() * (50 - -50) + -50).toFixed(0));
     }
 
-    // const [state, setState] = useState({ slide: 0, autoplay: false });
-
-    // function changeSlide(i) {
-    //     setState(state => ({ ...state, slide: state.slide + i }));
-    // }
-
-    // function toggleAutoplay() {
-    //     setState(state => ({ ...state, autoplay: !state.autoplay }));
-    // }
+    const resetCounter = () => {
+        setCounter(counter => props.counter);
+    }
 
     return (
-        <Container>
-            <div className="slider w-50 m-auto">
-                <img className="d-block w-100" src="https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-eiffel-tower.jpg" alt="slide" />
-                <div className="text-center mt-5">Active slide {slide} <br />
-                    {autoplay ? 'auto' : null}
-                </div>
-                <div className="buttons mt-3">
-                    <button
-                        className="btn btn-primary me-2"
-                        onClick={() => changeSlide(-1)}>-1</button>
-                    <button
-                        className="btn btn-primary me-2"
-                        onClick={() => changeSlide(1)}>+1</button>
-                    <button
-                        className="btn btn-primary me-2"
-                        onClick={toggleAutoplay}>toggle autoplay</button>
-                </div >
-            </div >
-        </Container >
+        <div className="app">
+            <div className="counter">{counter}</div>
+            <div className="controls">
+                <button onClick={incCounter}>INC</button>
+                <button onClick={decCounter}>DEC</button>
+                <button onClick={rndCounter}>RND</button>
+                <button onClick={resetCounter}>RESET</button>
+            </div>
+        </div>
     )
-}
-
-
-function App() {
-    return (
-        <Slider />
-    );
 }
 
 export default App;
