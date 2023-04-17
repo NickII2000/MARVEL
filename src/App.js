@@ -65,7 +65,6 @@ const Slider = (props) => {
 
     function changeSlide(i) {
         setSlide(slide => slide + i);
-        setSlide(slide => slide + i);
     }
 
     function toggleAutoplay() {
