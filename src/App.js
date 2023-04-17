@@ -5,7 +5,7 @@ import './App.css';
 const Form = () => {
     const [text, setText] = useState('');
 
-    const myRef = useRef(abc);
+    const myRef = useRef(x);
 
     useEffect(() => {
         myRef.current = text;
