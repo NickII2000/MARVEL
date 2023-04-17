@@ -57,14 +57,14 @@ const Slider = (props) => {
     const calcValue = () => {
         console.log('random');
 
-        return Math.random() * (3 - 1) + 1;
+        return Math.random() * (50 - 1) + 1;
     }
 
     const [slide, setSlide] = useState(() => calcValue());
     const [autoplay, setAutoplay] = useState(false);
 
     function changeSlide(i) {
-        setSlide(slide => slide + i);
+        setSlide(siude => slide + i);
     }
 
     function toggleAutoplay() {
