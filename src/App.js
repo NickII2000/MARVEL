@@ -40,7 +40,6 @@ const App = (props) => {
 
 export default App;
 
-
 // class App extends Component {
 //     constructor(props) {
 //         super(props);
