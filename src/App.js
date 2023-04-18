@@ -61,19 +61,19 @@ const Slider = (props) => {
     const [slide, setSlide] = useState(0);
     const [autoplay, setAutoplay] = useState(false);
 
-    function logging() {
-        console.log('log!');
-    }
+    // function logging() {
+    //     console.log('log!');
+    // }
 
     useEffect(() => {
         console.log('effect');
         document.title = `Slide: ${slide}`;
 
-        window.addEventListener('click', logging);
+        // window.addEventListener('click', logging);
 
-        return () => {
-            window.removeEventListener('click', logging);
-        }
+        // return () => {
+        //     window.removeEventListener('click', logging);
+        // }
 
     }, [slide]);
 
@@ -118,7 +118,7 @@ function App() {
 
     return (
         <>
-            <button onClick={() => setSlider(false)}>Click</button>
+            <button onClick={() => setSlider(slider => !slider)}>Click</button>
             {slider ? <Slider /> : null}
         </>
     );
