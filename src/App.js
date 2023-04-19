@@ -30,14 +30,14 @@ const Slider = (props) => {
     }
 
     useEffect(() => {
-        // console.log('effect');
+        console.log('effect');
         document.title = `Slide: ${slide}`;
 
-        // window.addEventListener('click', logging);
+        window.addEventListener('click', logging);
 
-        // return () => {
-        //     window.removeEventListener('click', logging);
-        // }
+        return () => {
+            window.removeEventListener('click', logging);
+        }
 
     }, [slide]);
 
