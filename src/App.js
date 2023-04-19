@@ -23,7 +23,7 @@ const Slider = (props) => {
             "https://www.planetware.com/photos-large/USNY/usa-best-places-miami.jpg",
             "https://www.planetware.com/wpimages/2022/09/best-luxury-all-inclusive-resorts-world-conrad-maldives-rangali-island-the-maldives.jpg"
         ];
-    }, [slide]);
+    }, [autoplay]);
 
     function logging() {
         console.log('log!');
