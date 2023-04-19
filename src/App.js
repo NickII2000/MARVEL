@@ -92,7 +92,7 @@ const Slide = ({ getSomeImages }) => {
     const [images, setImages] = useState([]);
 
     useEffect(() => {
-        setImages(getSomeImages());
+        setImages(getSomeImages);
     }, [getSomeImages]);
 
     return (
