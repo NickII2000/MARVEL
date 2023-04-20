@@ -53,9 +53,20 @@ const Slider = (props) => {
         return countTotal(slide);
     }, [slide]);
 
-    const style = useMemo(() => ({
-        color: slide > 4 ? 'red' : 'blue'
-    }), [slide]);
+    const styleRed = { color: 'red' };
+    const styleBlue = { color: 'blue' };
+
+    const style = useMemo(() => {
+        if (slide > 4) {
+            return styleRed;
+        } else {
+            return styleBlue;
+        }
+    }, [slide]);
+
+    // const style = useMemo(() => ({
+    //     color: slide > 4 ? 'red' : 'blue'
+    // }), [slide]);
 
     useEffect(() => {
         console.log('styles!')
