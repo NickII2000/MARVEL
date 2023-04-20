@@ -53,20 +53,20 @@ const Slider = (props) => {
         return countTotal(slide);
     }, [slide]);
 
-    const styleRed = { color: 'red' };
-    const styleBlue = { color: 'blue' };
+    // const styleRed = { color: 'red' };
+    // const styleBlue = { color: 'blue' };
 
-    const style = useMemo(() => {
-        if (slide > 4) {
-            return styleRed;
-        } else {
-            return styleBlue;
-        }
-    }, [slide]);
+    // const style = useMemo(() => {
+    //     if (slide > 4) {
+    //         return styleRed;
+    //     } else {
+    //         return styleBlue;
+    //     }
+    // }, [slide]);
 
-    // const style = useMemo(() => ({
-    //     color: slide > 4 ? 'red' : 'blue'
-    // }), [slide]);
+    const style = useMemo(() => ({
+        color: slide > 4 ? 'red' : 'blue'
+    }), [slide]);
 
     useEffect(() => {
         console.log('styles!')
@@ -85,7 +85,7 @@ const Slider = (props) => {
 
                 <Slide getSomeImages={getSomeImages} />
 
-                <div className="text-center mt-5">Active slide {slide} <br />
+                <div className="text-center mt-5">Active slide: {slide} <br />
                     {autoplay ? 'auto' : null}
                 </div>
                 <div style={style} className="text-center mt-5">Total slides: {total}
