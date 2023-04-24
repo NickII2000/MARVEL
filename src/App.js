@@ -11,7 +11,7 @@ const Form = () => {
 
     const [text, setText] = useState('');
 
-    const myRef = useRef(0);
+    const myRef = useRef(-10);
 
     useEffect(() => {
         // myRef.current = text;
