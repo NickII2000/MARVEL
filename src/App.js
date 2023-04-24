@@ -17,7 +17,7 @@ const Form = () => {
         // myRef.current = text;
         // myRef.current++;
         console.log(`text: ${text}`);
-        console.log(myRef.current);
+        console.log(`myRef.current: ${myRef.current}`);
     });
 
 
