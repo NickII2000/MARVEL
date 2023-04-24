@@ -14,10 +14,10 @@ const Form = () => {
     const myRef = useRef(-1);
 
     useEffect(() => {
-        // myRef.current = text;
-        myRef.current++;
-        console.log(`text: ${text}`);
-        console.log(`myRef.current: ${myRef.current}`);
+        // myRef.current++;
+        // console.log(`text: ${text}`);
+        // console.log(`myRef.current: ${myRef.current}`);
+        myRef.current = text;
     });
 
 
@@ -30,7 +30,7 @@ const Form = () => {
                 </div>
                 <div className="mb-3">
                     <label htmlFor="exampleFormControlTextarea1" className="form-label">Example textarea</label>
-                    <textarea className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <textarea value={myRef.current} className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                 </div>
             </form>
         </Container>
