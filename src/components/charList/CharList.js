@@ -104,31 +104,26 @@ const CharList = (props) => {
         )
     }
 
-    render() {
+    const items = renderItems(charList);
 
-        const { charList, loading, error, offset, newItemLoading, charEnded } = this.state;
+    const errorMessage = error ? <ErrorMessage /> : null;
+    const spinner = loading ? <Spinner /> : null;
+    const content = !(loading || error) ? items : null;
 
-        const items = this.renderItems(charList);
-
-        const errorMessage = error ? <ErrorMessage /> : null;
-        const spinner = loading ? <Spinner /> : null;
-        const content = !(loading || error) ? items : null;
-
-        return (
-            <div className="char__list">
-                {errorMessage}
-                {spinner}
-                {content}
-                <button
-                    className="button button__main button__long"
-                    disabled={newItemLoading}
-                    style={{ 'display': charEnded ? 'none' : 'block' }}
-                    onClick={() => this.onRequest(offset)}>
-                    <div className="inner">load more</div>
-                </button>
-            </div>
-        )
-    }
+    return (
+        <div className="char__list">
+            {errorMessage}
+            {spinner}
+            {content}
+            <button
+                className="button button__main button__long"
+                disabled={newItemLoading}
+                style={{ 'display': charEnded ? 'none' : 'block' }}
+                onClick={() => onRequest(offset)}>
+                <div className="inner">load more</div>
+            </button>
+        </div>
+    )
 }
 
 CharList.propTypes = {
