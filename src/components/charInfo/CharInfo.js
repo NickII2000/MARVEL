@@ -12,7 +12,7 @@ const CharInfo = (props) => {
 
     const [char, setChar] = useState(null);
     const [loading, setLoading] = useState(false);
-    const [error, setcError] = useState(false);
+    const [error, setError] = useState(false);
 
 
     // state = {
@@ -61,7 +61,7 @@ const CharInfo = (props) => {
 
     };
 
-    onCharLoaded = (char) => {
+    const onCharLoaded = (char) => {
 
         setChar(char => char);
         setLoading(loading => false);
@@ -71,7 +71,7 @@ const CharInfo = (props) => {
         // })
     }
 
-    onCharLoading = () => {
+    const onCharLoading = () => {
 
         setLoading(loading => true);
         setError(error => false);
@@ -83,36 +83,36 @@ const CharInfo = (props) => {
 
     const onError = () => {
 
-        setLoading(loading => true);
-        setError(error => false);
+        setLoading(loading => false);
+        setError(error => true);
         // this.setState({
         //     loading: false,
         //     error: true
         // })
     }
 
-    render() {
-        const { char, loading, error } = this.state;
 
-        // console.log(char);
-        // console.log(loading);
-        // console.log(error);
+    // const { char, loading, error } = this.state;
 
-        const sceleton = char || loading || error ? null : <Sceleton />;
-        const errorMessage = error ? <ErrorMessage /> : null;
-        const spinner = loading ? <Spinner /> : null;
-        // const content = !(loading || error || !char) ? <View char={char} /> : null;
-        const content = (!loading && !error && char) ? < View char={char} /> : null;
+    // console.log(char);
+    // console.log(loading);
+    // console.log(error);
 
-        return (
-            <div className="char__info">
-                {sceleton}
-                {errorMessage}
-                {spinner}
-                {content}
-            </div>
-        )
-    }
+    const sceleton = char || loading || error ? null : <Sceleton />;
+    const errorMessage = error ? <ErrorMessage /> : null;
+    const spinner = loading ? <Spinner /> : null;
+    // const content = !(loading || error || !char) ? <View char={char} /> : null;
+    const content = (!loading && !error && char) ? < View char={char} /> : null;
+
+    return (
+        <div className="char__info">
+            {sceleton}
+            {errorMessage}
+            {spinner}
+            {content}
+        </div>
+    )
+
 }
 
 const View = ({ char }) => {
