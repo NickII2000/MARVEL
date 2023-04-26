@@ -42,21 +42,9 @@ const CharInfo = (props) => {
     }
 
     const onError = () => {
-
-        setLoading(loading => false);
-        setError(error => true);
-        // this.setState({
-        //     loading: false,
-        //     error: true
-        // })
+        setError(true);
+        setLoading(false);
     }
-
-
-    // const { char, loading, error } = this.state;
-
-    // console.log(char);
-    // console.log(loading);
-    // console.log(error);
 
     const sceleton = char || loading || error ? null : <Sceleton />;
     const errorMessage = error ? <ErrorMessage /> : null;
