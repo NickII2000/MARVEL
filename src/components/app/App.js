@@ -15,7 +15,6 @@ const App = () => {
         setChar(id);
     }
 
-
     return (
         <div className="app">
             <AppHeader />
