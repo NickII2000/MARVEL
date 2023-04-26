@@ -25,37 +25,20 @@ const CharInfo = (props) => {
         if (!charId) {
             return;
         }
-
         onCharLoading();
-
         marvelService
             .getCharacter(charId)
             .then(onCharLoaded)
             .catch(onError);
-
-        // ниже ошибка для проверки предохранителя:
-        // this.foo.bar = 0;
-
     };
 
     const onCharLoaded = (char) => {
-
-        setChar(char => char);
-        setLoading(loading => false);
-        // this.setState({
-        //     char,
-        //     loading: false,
-        // })
+        setChar(char);
+        setLoading(false);
     }
 
     const onCharLoading = () => {
-
-        setLoading(loading => true);
-        setError(error => false);
-        // this.setState({
-        //     loading: true,
-        //     error: false,
-        // })
+        setLoading(true);
     }
 
     const onError = () => {
