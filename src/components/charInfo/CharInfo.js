@@ -1,4 +1,4 @@
-import { Component } from "react";
+import { useState } from "react";
 import PropTypes from 'prop-types';
 
 import MarvelService from '../../services/MarvelService';
@@ -8,13 +8,18 @@ import Sceleton from '../skeleton/Skeleton'
 
 import './charInfo.scss';
 
-class CharInfo extends Component {
+const CharInfo = () => {
 
-    state = {
-        char: null,
-        loading: false,
-        error: false,
-    }
+    const [char, setChar] = useState(null);
+    const [loading, setLoading] = useState(false);
+    const [cerror, setcError] = useState(false);
+
+
+    // state = {
+    //     char: null,
+    //     loading: false,
+    //     error: false,
+    // }
 
     marvelService = new MarvelService();
 
