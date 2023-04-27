@@ -28,18 +28,13 @@ const RandomChar = () => {
         setChar(char);
     }
 
-    onCharLoading = () => {
-        this.setState({
-            loading: true,
-            error: false,
-        })
+    const onCharLoading = () => {
+        setLoading(true);
     }
 
-    onError = () => {
-        this.setState({
-            loading: false,
-            error: true
-        })
+    const onError = () => {
+        setLoading(false);
+        setError(true);
     }
 
     updateChar = () => {
