@@ -30,6 +30,7 @@ const RandomChar = () => {
 
     const onCharLoading = () => {
         setLoading(true);
+        setError(false);
     }
 
     const onError = () => {
