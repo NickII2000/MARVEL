@@ -33,8 +33,8 @@ const RandomChar = () => {
     }
 
     const onError = () => {
-        setLoading(false);
         setError(true);
+        setLoading(false);
     }
 
     const updateChar = () => {
