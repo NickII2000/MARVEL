@@ -7,13 +7,12 @@ import './randomChar.scss';
 import mjolnir from '../../resources/img/mjolnir.png';
 
 const RandomChar = () => {
-    state = {
-        char: {},
-        loading: true,
-        error: false
-    }
 
-    marvelService = new MarvelService();
+    const [char, setChar] = useState({});
+    const [loading, setLoading] = useState(true;
+    const [error, setError] = useState(false);
+
+    const marvelService = new MarvelService();
 
     componentDidMount() {
         // ниже ошибка для проверки предохранителя:
