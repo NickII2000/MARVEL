@@ -8,28 +8,24 @@ import mjolnir from '../../resources/img/mjolnir.png';
 
 const RandomChar = () => {
 
-    const [char, setChar] = useState({});
-    const [loading, setLoading] = useState(true;
+    const [char, setChar] = useState(null);
+    const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
 
     const marvelService = new MarvelService();
 
-    componentDidMount() {
-        // ниже ошибка для проверки предохранителя:
-        // this.foo.bar = 0;
-        this.updateChar();
-        // this.timerId = setInterval(this.updateChar, 1500);
-    }
+    useEffect(() => {
+        updateChar();
+        const timerId = setInterval(updateChar, 1500);
 
-    componentWillUnmount() {
-        clearInterval(this.timerId);
-    }
+        return () => {
+            clearInterval(timerId)
+        }
+    }, [])
 
-    onCharLoaded = (char) => {
-        this.setState({
-            char,
-            loading: false
-        })
+    const onCharLoaded = (char) => {
+        setLoading(false);
+        setChar(char);
     }
 
     onCharLoading = () => {
