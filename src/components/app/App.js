@@ -5,13 +5,7 @@ import './App.css';
 const Form = () => {
     const [text, setText] = useState('');
 
-    const validateInput = (text) => {
-        if (text.search(/\d/) >= 0) {
-            return true;
-        } else {
-            return false;
-        }
-    }
+    const validateInput = (text) => text.search(/\d/) >= 0;
 
     const color = validateInput(text) ? 'text-danger' : null;
 
