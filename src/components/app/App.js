@@ -2,6 +2,16 @@ import { useState, useEffect } from 'react';
 import { Container } from 'react-bootstrap';
 import './App.css';
 
+function useInputWithValidate(initialValue) {
+    const [value, setValue] = useState(initialValue);
+
+    const onChange = event => {
+        setValue(event.target.value);
+    }
+
+    return { value, onChange };
+}
+
 const Form = () => {
     const [text, setText] = useState('');
     const [textArea, setTextArea] = useState('');
