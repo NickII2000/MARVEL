@@ -9,7 +9,7 @@ function useInputWithValidate(initialValue) {
         setValue(event.target.value);
     }
 
-    const validateInput = (value) => value.search(/\d/) >= 10;
+    const validateInput = (value) => value.search(/\d/) >= 0;
 
     // return { value: value, onChange: onChange, validateInput: validateInput };
     return { value, onChange, validateInput };
