@@ -10,8 +10,8 @@ function useInputWithValidate(initialValue) {
     }
 
     // const x = value.search(/\d/);
-    const validateInput = (value) => true;
-    // const validateInput = (value) => value.search(/\d/) >= 0;
+    // const validateInput = (value) => true;
+    const validateInput = (value) => value.search(/\d/) >= 0;
 
     // return { value: value, onChange: onChange, validateInput: validateInput };
     return { value, onChange, validateInput };
