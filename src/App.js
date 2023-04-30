@@ -76,8 +76,8 @@ const RndCounter = (props) => {
 const App = () => {
     return (
         <>
-            <Counter counter={1} />
-            <RndCounter counter={2} />
+            <Counter />
+            <RndCounter />
         </>
     )
 }
