@@ -25,7 +25,8 @@ const Form = () => {
     const textArea = useInputWithValidate('');
 
     // const validateInput = (text) => text.search(/\d/) >= 0;
-    const color = input.validateInput() ? 'text-danger' : null;
+    const colorInput = input.validateInput() ? 'text-danger' : null;
+    const colorTextArea = textArea.validateInput() ? 'text-danger' : null;
 
     return (
         <Container>
@@ -37,7 +38,7 @@ const Form = () => {
                         onChange={input.onChange}
                         type="email"
                         value={input.value}
-                        className={`form-control ${color}`}
+                        className={`form-control ${colorInput}`}
                         id="exampleFormControlInput1"
                         placeholder="name@example.com" />
                 </div>
@@ -46,7 +47,7 @@ const Form = () => {
                     <textarea
                         onChange={textArea.onChange}
                         value={textArea.value}
-                        className="form-control"
+                        className={`form-control ${colorTextArea}`}
                         id="exampleFormControlTextarea1"
                         rows="3"></textarea>
                 </div>
