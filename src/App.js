@@ -1,89 +1,53 @@
-import { Component, useState } from 'react';
+import { useState } from 'react';
 import './app.css';
 
-// class App extends Component {
-//     constructor(props) {
-//         super(props);
-//         this.state = {
-//             counter: this.props.counter
-//         }
-//     }
+function useCounter(initial) {
+    const [counter, setCounter] = useState(initial);
 
-//     incCounter = () => {
-//         if (this.state.counter < 50) {
-//             this.setState(state => ({
-//                 counter: state.counter + 1
-//             }))
-//         }
-//     }
+    // Это вариант с запросом, чтобы он нормально работал после активации - уберите все props,
+    // которые приходят в компонент + аргумент initial поменяйте на 0 или null
 
-//     decCounter = () => {
-//         if (this.state.counter > -50) {
-//             this.setState(state => ({
-//                 counter: state.counter - 1
-//             }))
-//         }
-//     }
-
-//     rndCounter = () => {
-//         this.setState({
-//             counter: +(Math.random() * (50 - -50) + -50).toFixed(0)
-//         })
-//     }
-
-//     resetCounter = () => {
-//         this.setState({
-//             counter: this.props.counter
-//         })
-//     }
-
-//     render() {
-//         const { counter } = this.state;
-
-//         return (
-//             <div className="app">
-//                 <div className="counter">{counter}</div>
-//                 <div className="controls">
-//                     <button onClick={this.incCounter}>INC</button>
-//                     <button onClick={this.decCounter}>DEC</button>
-//                     <button onClick={this.rndCounter}>RND</button>
-//                     <button onClick={this.resetCounter}>RESET</button>
-//                 </div>
-//             </div>
-//         )
-//     }
-// }
-// 1) Начальное значение счетчика должно передаваться через props
-// 2) INC и DEC увеличивают и уменьшают счетчик соответственно на 1. Без ограничений, но можете добавить границу в -50/50. По достижению границы ничего не происходит
-// 3) RND изменяет счетчик в случайное значение от -50 до 50. Конструкцию можете прогуглить за 20 секунд :) Не зависит от предыдущего состояния
-// 4) RESET сбрасывает счетчик в 0 или 
-
-const App = (props) => {
-
-    const [counter, setCounter] = useState(props.counter);
+    // React.useEffect(() => {
+    //     fetch('https://www.random.org/integers/?num=1&min=-50&max=50&col=1&base=10&format=plain&rnd=new')
+    //         .then(res => res.text())
+    //         .then(res => setCounter(res))
+    //         .catch(err => console.log(err))
+    // }, [])
 
     const incCounter = () => {
         if (counter < 50) {
-            setCounter(counter => counter + 1);
+            setCounter(counter => counter + 1)
         }
     }
 
     const decCounter = () => {
         if (counter > -50) {
-            setCounter(counter => counter - 1);
+            setCounter(counter => counter - 1)
         }
     }
 
     const rndCounter = () => {
-        setCounter(counter => +(Math.random() * (50 - -50) + -50).toFixed(0));
+        setCounter(+(Math.random() * (50 - -50) + -50).toFixed(0))
     }
 
     const resetCounter = () => {
-        setCounter(counter => props.counter);
+        setCounter(initial)
     }
 
+    return {
+        counter,
+        incCounter,
+        decCounter,
+        rndCounter,
+        resetCounter
+    }
+}
+
+const Counter = (props) => {
+    const { counter, incCounter, decCounter, rndCounter, resetCounter } = useCounter(props.counter);
+
     return (
-        <div className="app">
+        <div className="component">
             <div className="counter">{counter}</div>
             <div className="controls">
                 <button onClick={incCounter}>INC</button>
@@ -92,6 +56,29 @@ const App = (props) => {
                 <button onClick={resetCounter}>RESET</button>
             </div>
         </div>
+    )
+}
+
+const RndCounter = (props) => {
+    const { counter, rndCounter, resetCounter } = useCounter(props.counter);
+
+    return (
+        <div className="component">
+            <div className="counter">{counter}</div>
+            <div className="controls">
+                <button onClick={rndCounter}>RND</button>
+                <button onClick={resetCounter}>RESET</button>
+            </div>
+        </div>
+    )
+}
+
+const App = () => {
+    return (
+        <>
+            <Counter counter={0} />
+            <RndCounter counter={5} />
+        </>
     )
 }
 
