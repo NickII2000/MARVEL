@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './app.css';
 
 function useCounter(initial) {
@@ -7,12 +7,12 @@ function useCounter(initial) {
     // Это вариант с запросом, чтобы он нормально работал после активации - уберите все props,
     // которые приходят в компонент + аргумент initial поменяйте на 0 или null
 
-    // React.useEffect(() => {
-    //     fetch('https://www.random.org/integers/?num=1&min=-50&max=50&col=1&base=10&format=plain&rnd=new')
-    //         .then(res => res.text())
-    //         .then(res => setCounter(res))
-    //         .catch(err => console.log(err))
-    // }, [])
+    useState(useEffect(() => {
+        fetch('https://www.random.org/integers/?num=1&min=-50&max=50&col=1&base=10&format=plain&rnd=new')
+            .then(res => res.text())
+            .then(res => setCounter(res))
+            .catch(err => console.log(err))
+    }, []));
 
     const incCounter = () => {
         if (counter < 50) {
