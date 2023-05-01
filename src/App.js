@@ -10,7 +10,7 @@ function useCounter(initial) {
     useState(useEffect(() => {
         fetch('https://www.random.org/integers/?num=1&min=-50&max=50&col=1&base=10&format=plain&rnd=new')
             .then(res => res.text())
-            .then(res => setCounter(res))
+            .then(res => setCounter(Number(res)))
             .catch(err => console.log(err))
     }, []));
 
