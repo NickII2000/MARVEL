@@ -60,7 +60,7 @@ const Counter = (props) => {
 }
 
 const RndCounter = (props) => {
-    const { counter, rndCounter, resetCounter } = useCounter(999990);
+    const { counter, rndCounter, resetCounter } = useCounter(0);
 
     return (
         <div className="component">
