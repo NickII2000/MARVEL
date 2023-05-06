@@ -44,7 +44,7 @@ function useCounter(initial) {
 }
 
 const Counter = (props) => {
-    const { counter, incCounter, decCounter, rndCounter, resetCounter } = useCounter(760);
+    const { counter, incCounter, decCounter, rndCounter, resetCounter } = useCounter(7650);
 
     return (
         <div className="component">
