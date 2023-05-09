@@ -44,16 +44,30 @@ function useCounter(initial) {
 }
 
 const Counter = (props) => {
-    const { counter, incCounter, decCounter, rndCounter, resetCounter } = useCounter(0);
+    // const { counter, incCounter, decCounter, rndCounter, resetCounter } = useCounter(0);
+
+    // return (
+    //     <div className="component">
+    //         <div className="counter">{counter}</div>
+    //         <div className="controls">
+    //             <button onClick={incCounter}>INC</button>
+    //             <button onClick={decCounter}>DEC</button>
+    //             <button onClick={rndCounter}>RND</button>
+    //             <button onClick={resetCounter}>RESET</button>
+    //         </div>
+    //     </div>
+    // )
+
+    const calc1 = useCounter(0);
 
     return (
         <div className="component">
-            <div className="counter">{counter}</div>
+            <div className="counter">{calc1.counter}</div>
             <div className="controls">
-                <button onClick={incCounter}>INC</button>
-                <button onClick={decCounter}>DEC</button>
-                <button onClick={rndCounter}>RND</button>
-                <button onClick={resetCounter}>RESET</button>
+                <button onClick={calc1.incCounter}>INC</button>
+                <button onClick={calc1.decCounter}>DEC</button>
+                <button onClick={calc1.rndCounter}>RND</button>
+                <button onClick={calc1.resetCounter}>RESET</button>
             </div>
         </div>
     )
