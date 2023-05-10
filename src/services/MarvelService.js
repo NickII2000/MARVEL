@@ -3,9 +3,9 @@ import { useHttp } from '../hooks/http.hook';
 const useMarvelService = () => {
     const { loading, request, error } = useHttp();
 
-    _apiBase = 'https://gateway.marvel.com:443/v1/public/';
-    _apiKey = 'apikey=69d8fb97dce7de89ea39e572903300ab';
-    _baseOffset = 210;
+    const _apiBase = 'https://gateway.marvel.com:443/v1/public/';
+    const _apiKey = 'apikey=69d8fb97dce7de89ea39e572903300ab';
+    const _baseOffset = 210;
 
     // !!! "getResource" заменён на "request"
     // getResource = async (url) => {
@@ -46,4 +46,4 @@ const useMarvelService = () => {
     return { loading, error, getAllCharacters, getCharacter };
 }
 
-export default MarvelService;
+export default useMarvelService;
