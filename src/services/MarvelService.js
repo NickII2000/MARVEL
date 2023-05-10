@@ -26,7 +26,8 @@ const useMarvelService = () => {
     const getCharacter = async (id) => {
         const res = await request(`${_apiBase}characters/${id}?${_apiKey}`);
 
-        // console.log(res.data.results[0]); // временно
+        console.log(res); // временно
+        console.log(res.data.results[0]); // временно
 
         return _transformCharacter(res.data.results[0]);
     }
