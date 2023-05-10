@@ -40,9 +40,11 @@ const RandomChar = () => {
 
     const updateChar = () => {
         // const id = Math.floor(Math.random() * (1011400 - 1011000) + 1011000);
+
         // id c ошибкой: 1011049
         const id = Math.floor(Math.random() * (1011050 - 1011045) + 1011045);
         console.log(id);
+
         // onCharLoading();
         getCharacter(id)
             .then(onCharLoaded);
