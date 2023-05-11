@@ -10,8 +10,6 @@ import './charList.scss';
 const CharList = (props) => {
 
     const [charList, setCharList] = useState([]);
-    // const [loading, setLoading] = useState(true);
-    // const [error, setError] = useState(false);
     const [newItemLoading, setNewItemLoading] = useState(false);
     const [offset, setOffset] = useState(1544);
     const [charEnded, setCharEnded] = useState(false);
@@ -26,7 +24,6 @@ const CharList = (props) => {
         initial ? setNewItemLoading(false) : setNewItemLoading(true);
         getAllCharacters(offset)
             .then(onCharListLoaded);
-        // .catch(onError);
     }
 
     const onCharListLoaded = (newCharList) => {
@@ -36,16 +33,10 @@ const CharList = (props) => {
         }
 
         setCharList(charList => [...charList, ...newCharList]);
-        // setLoading(loading => false);
         setNewItemLoading(newItemLoading => false);
         setOffset(offset => offset + 9);
         setCharEnded(charEnded => ended);
     }
-
-    // const onError = () => {
-    //     setError(true);
-    //     setLoading(loading => false);
-    // }
 
     const itemRefs = useRef([]);
 
@@ -104,14 +95,12 @@ const CharList = (props) => {
 
     const errorMessage = error ? <ErrorMessage /> : null;
     const spinner = loading && !newItemLoading ? <Spinner /> : null;
-    // const content = !(loading || error) ? items : null;
 
     return (
         <div className="char__list">
             {errorMessage}
             {spinner}
             {items}
-            {/* {content} */}
             <button
                 className="button button__main button__long"
                 disabled={newItemLoading}

@@ -11,8 +11,6 @@ import './charInfo.scss';
 const CharInfo = (props) => {
 
     const [char, setChar] = useState(null);
-    // const [loading, setLoading] = useState(false);
-    // const [error, setError] = useState(false);
 
     const { loading, error, getCharacter, clearError } = useMarvelService();
 
@@ -27,30 +25,17 @@ const CharInfo = (props) => {
         }
 
         clearError();
-        // onCharLoading();
         getCharacter(charId)
             .then(onCharLoaded);
-        // .catch(onError);
     };
 
     const onCharLoaded = (char) => {
-        // setLoading(false);
         setChar(char);
     }
-
-    // const onCharLoading = () => {
-    //     setLoading(true);
-    // }
-
-    // const onError = () => {
-    //     setError(true);
-    //     setLoading(false);
-    // }
 
     const sceleton = char || loading || error ? null : <Sceleton />;
     const errorMessage = error ? <ErrorMessage /> : null;
     const spinner = loading ? <Spinner /> : null;
-    // const content = !(loading || error || !char) ? <View char={char} /> : null;
     const content = (!loading && !error && char) ? < View char={char} /> : null;
 
     return (
