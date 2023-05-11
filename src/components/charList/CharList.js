@@ -24,7 +24,7 @@ const CharList = (props) => {
 
     const onRequest = (offset) => {
         setNewItemLoading(true);
-        marvelService.getAllCharacters(offset)
+        getAllCharacters(offset)
             .then(onCharListLoaded)
             .catch(onError)
     }
