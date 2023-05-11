@@ -10,27 +10,23 @@ import './charList.scss';
 const CharList = (props) => {
 
     const [charList, setCharList] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(false);
+    // const [loading, setLoading] = useState(true);
+    // const [error, setError] = useState(false);
     const [newItemLoading, setNewItemLoading] = useState(false);
     const [offset, setOffset] = useState(1544);
     const [charEnded, setCharEnded] = useState(false);
 
-    const marvelService = useMarvelService();
+    const { loading, error, getAllCharacters } = useMarvelService();
 
     useEffect(() => {
         onRequest();
     }, []);
 
     const onRequest = (offset) => {
-        onCharListLoading();
+        setNewItemLoading(true);
         marvelService.getAllCharacters(offset)
             .then(onCharListLoaded)
             .catch(onError)
-    }
-
-    const onCharListLoading = () => {
-        setNewItemLoading(true);
     }
 
     const onCharListLoaded = (newCharList) => {
