@@ -24,12 +24,16 @@ const useMarvelService = () => {
     }
 
     const getCharacter = async (id) => {
-        const res = await request(`${_apiBase}characters/${id}?${_apiKey}`);
+        try { // !!!моя дописка
+            const res = await request(`${_apiBase}characters/${id}?${_apiKey}`);
 
-        console.log(res); // временно
-        console.log(res.data.results[0]); // временно
+            // console.log(res); // временно
+            // console.log(res.data.results[0]); // временно
 
-        return _transformCharacter(res.data.results[0]);
+            return _transformCharacter(res.data.results[0]);
+        } catch {// !!!моя дописка
+            return null;// !!!моя дописка
+        }// !!!моя дописка
     }
 
     const _transformCharacter = (char) => {
