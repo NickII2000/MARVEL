@@ -13,7 +13,7 @@ const CharList = (props) => {
     // const [loading, setLoading] = useState(true);
     // const [error, setError] = useState(false);
     const [newItemLoading, setNewItemLoading] = useState(false);
-    const [offset, setOffset] = useState(1544);
+    const [offset, setOffset] = useState(1535);
     const [charEnded, setCharEnded] = useState(false);
 
     const { loading, error, getAllCharacters } = useMarvelService();
@@ -104,13 +104,14 @@ const CharList = (props) => {
 
     const errorMessage = error ? <ErrorMessage /> : null;
     const spinner = loading && !newItemLoading ? <Spinner /> : null;
-    const content = !(loading || error) ? items : null;
+    // const content = !(loading || error) ? items : null;
 
     return (
         <div className="char__list">
             {errorMessage}
             {spinner}
-            {content}
+            {items}
+            {/* {content} */}
             <button
                 className="button button__main button__long"
                 disabled={newItemLoading}
