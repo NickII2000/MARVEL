@@ -25,8 +25,8 @@ const CharList = (props) => {
     const onRequest = (offset) => {
         setNewItemLoading(true);
         getAllCharacters(offset)
-            .then(onCharListLoaded)
-            .catch(onError)
+            .then(onCharListLoaded);
+        // .catch(onError);
     }
 
     const onCharListLoaded = (newCharList) => {
@@ -36,16 +36,16 @@ const CharList = (props) => {
         }
 
         setCharList(charList => [...charList, ...newCharList]);
-        setLoading(loading => false);
+        // setLoading(loading => false);
         setNewItemLoading(newItemLoading => false);
         setOffset(offset => offset + 9);
         setCharEnded(charEnded => ended);
     }
 
-    const onError = () => {
-        setError(true);
-        setLoading(loading => false);
-    }
+    // const onError = () => {
+    //     setError(true);
+    //     setLoading(loading => false);
+    // }
 
     const itemRefs = useRef([]);
 
