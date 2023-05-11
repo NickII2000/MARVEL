@@ -18,6 +18,7 @@ export const useHttp = () => {
             const data = await response.json();
 
             setLoading(false);
+            console.log(data);
             return data;
         } catch (e) {
             setLoading(false);
