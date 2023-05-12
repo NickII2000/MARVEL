@@ -33,8 +33,8 @@ const App = () => {
                     </ErrorBoundary>
                 </div>
                 <img className="bg-decoration" src={decoration} alt="vision" /> */}
-                {/* <AppBanner /> */}
-                <ComicsList />
+                {/* <AppBanner />
+                <ComicsList /> */}
             </main>
         </div>
     )
