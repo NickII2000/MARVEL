@@ -1,4 +1,5 @@
-import { useState, flushSync } from 'react';
+import { useState } from 'react';
+import { flushSync } from 'react-dom';
 
 function TestComponent() {
     const [count, setCount] = useState(0);
@@ -9,14 +10,21 @@ function TestComponent() {
         // setFlag(f => !f); // Не вызывает ререндер
         // React вызовет ререндер только один раз, в конце
 
-        setTimeout(() => {
+        //     setTimeout(() => {
+        //         setCount(c => c + 1);
+        //         setFlag(f => !f);
+        //     }, 100);
+
+        flushSync(() => {
             setCount(c => c + 1);
+        });
+
+        flushSync(() => {
             setFlag(f => !f);
-        }, 100);
+        });
+
+        console.log('render');
     }
-
-    console.log('render');
-
     /*
     //  function handleClick() {
     //     fetchSomething().then(() => {
