@@ -13,12 +13,12 @@ const useMarvelService = () => {
     }
 
     const getCharacter = async (id) => {
-        try { // !!!моя дописка
-            const res = await request(`${_apiBase}characters/${id}?${_apiKey}`);
-            return _transformCharacter(res.data.results[0]);
-        } catch {// !!!моя дописка
-            return null;// !!!моя дописка
-        }// !!!моя дописка
+        // try { // !!!моя дописка
+        const res = await request(`${_apiBase}characters/${id}?${_apiKey}`);
+        return _transformCharacter(res.data.results[0]);
+        // } catch {// !!!моя дописка
+        //     return null;// !!!моя дописка
+        // }// !!!моя дописка
     }
 
     const getAllComics = async (offset = 0) => {
