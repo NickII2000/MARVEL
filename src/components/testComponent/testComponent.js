@@ -23,8 +23,10 @@ function TestComponent() {
             setFlag(f => !f);
         });
 
-        console.log('render');
     }
+
+    console.log('render');
+
     /*
     //  function handleClick() {
     //     fetchSomething().then(() => {
