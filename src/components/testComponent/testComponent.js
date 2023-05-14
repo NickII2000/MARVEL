@@ -6,8 +6,8 @@ function TestComponent() {
     const [flag, setFlag] = useState(false);
 
     function handleClick() {
-        setCount(c => c + 1); // Не вызывает ререндер
-        setFlag(f => !f); // Не вызывает ререндер
+        // setCount(c => c + 1); // Не вызывает ререндер
+        // setFlag(f => !f); // Не вызывает ререндер
         // React вызовет ререндер только один раз, в конце
 
         // setTimeout(() => {
@@ -15,13 +15,13 @@ function TestComponent() {
         //     setFlag(f => !f);
         // }, 100);
 
-        // flushSync(() => {
-        //     setCount(c => c + 1);
-        // });
+        flushSync(() => {
+            setCount(c => c + 1);
+        });
 
-        // flushSync(() => {
-        //     setFlag(f => !f);
-        // });
+        flushSync(() => {
+            setFlag(f => !f);
+        });
 
     }
 
