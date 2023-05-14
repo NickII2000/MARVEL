@@ -38,7 +38,7 @@ const CharList = (props) => {
         setCharEnded(charEnded => ended);
     }
 
-    console.log('charList!');
+    // console.log('charList!');
 
     const itemRefs = useRef([]);
 
