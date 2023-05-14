@@ -1,14 +1,21 @@
-import { useState } from 'react';
+import { useState, flushSync } from 'react';
 
 function TestComponent() {
     const [count, setCount] = useState(0);
     const [flag, setFlag] = useState(false);
 
     function handleClick() {
-        setCount(c => c + 1); // Не вызывает ререндер
-        setFlag(f => !f); // Не вызывает ререндер
+        // setCount(c => c + 1); // Не вызывает ререндер
+        // setFlag(f => !f); // Не вызывает ререндер
         // React вызовет ререндер только один раз, в конце
+
+        setTimeout(() => {
+            setCount(c => c + 1);
+            setFlag(f => !f);
+        }, 100);
     }
+
+    console.log('render');
 
     /*
     //  function handleClick() {
