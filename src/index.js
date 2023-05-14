@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './components/app/App';
 
-import './style/style.scss';
+// import './style/style.scss';
 
 // было в версии 17
 // ReactDOM.render(
