@@ -10,18 +10,18 @@ function TestComponent() {
         // setFlag(f => !f); // Не вызывает ререндер
         // React вызовет ререндер только один раз, в конце
 
-        //     setTimeout(() => {
-        //         setCount(c => c + 1);
-        //         setFlag(f => !f);
-        //     }, 100);
-
-        flushSync(() => {
+        setTimeout(() => {
             setCount(c => c + 1);
-        });
-
-        flushSync(() => {
             setFlag(f => !f);
-        });
+        }, 100);
+
+        // flushSync(() => {
+        //     setCount(c => c + 1);
+        // });
+
+        // flushSync(() => {
+        //     setFlag(f => !f);
+        // });
 
     }
 
