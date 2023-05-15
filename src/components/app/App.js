@@ -1,17 +1,27 @@
 import data from './data';
-import { useState, useMemo, useDeferredValue } from 'react';
+// import { useState, useMemo, useDeferredValue } from 'react';
+import { useState, useMemo, useTransition } from 'react';
 
 function App() {
     const [text, setText] = useState('');
     const [posts, setPosts] = useState(data);
-    const deferredValue = useDeferredValue(text);
+    // const deferredValue = useDeferredValue(text);
+
+    // const filteredPosts = useMemo(() => {
+    //     return posts.filter(item => item.name.toLowerCase().includes(text));
+    // }, [deferredValue]);
+
+    const [isPending, startTransition] = useTransition();
 
     const filteredPosts = useMemo(() => {
         return posts.filter(item => item.name.toLowerCase().includes(text));
     }, [deferredValue]);
 
+
     const onValueChange = (e) => {
-        setText(e.target.value.toLowerCase());
+        startTransition(() => {
+            setText(e.target.value.toLowerCase());
+        });
     }
 
     return (
@@ -21,11 +31,12 @@ function App() {
             <hr />
 
             <div>
-                {filteredPosts.map(post => (
-                    <div key={post._id}>
-                        <h4>{post._id} {post.name}</h4>
-                    </div>
-                ))}
+                {isPending ? <h4>Loading...</h4> :
+                    filteredPosts.map(post => (
+                        <div key={post._id}>
+                            <h4>{post._id} {post.name}</h4>
+                        </div>
+                    ))}
             </div>
         </>
     );
