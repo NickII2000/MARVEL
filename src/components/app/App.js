@@ -23,7 +23,7 @@ function App() {
 
     const onValueChange = (e) => {
         startTransition(() => {
-            setText(e.target.value);
+            setText(e.target.value.toLowerCase());
         });
     }
 
