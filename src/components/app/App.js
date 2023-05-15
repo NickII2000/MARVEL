@@ -13,10 +13,13 @@ function App() {
 
     const [isPending, startTransition] = useTransition();
 
+    // const filteredPosts = useMemo(() => {
+    //     return posts.filter(item => item.name.toLowerCase().includes(text));
+    // }, [deferredValue]);
+
     const filteredPosts = useMemo(() => {
         return posts.filter(item => item.name.toLowerCase().includes(text));
-    }, [deferredValue]);
-
+    }, [text]);
 
     const onValueChange = (e) => {
         startTransition(() => {
