@@ -34,7 +34,7 @@ function App() {
             <hr />
 
             <div>
-                {isPending ? <h4>Loading!...</h4> :
+                {isPending ? <h4>Loading...</h4> :
                     filteredPosts.map(post => (
                         <div key={post._id}>
                             <h4>{post._id} {post.name}</h4>
