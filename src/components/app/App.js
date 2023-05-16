@@ -1,96 +1,44 @@
-import data from './data';
-// import { useState, useMemo, useDeferredValue } from 'react';
-import { useState, useMemo, useTransition } from 'react';
+import { useState } from "react";
+import AppHeader from "../appHeader/AppHeader";
+import RandomChar from "../randomChar/RandomChar";
+import CharList from "../charList/CharList";
+import CharInfo from "../charInfo/CharInfo";
+import ComicsList from "../comicsList/ComicsList";
+import AppBanner from "../appBanner/AppBanner";
+import ErrorBoundary from "../errorBoundary/ErrorBoundary";
 
-function App() {
-    const [text, setText] = useState('');
-    const [posts, setPosts] = useState(data);
-    // const deferredValue = useDeferredValue(text);
+import decoration from '../../resources/img/vision.png';
 
-    // const filteredPosts = useMemo(() => {
-    //     return posts.filter(item => item.name.toLowerCase().includes(text));
-    // }, [deferredValue]);
+const App = () => {
 
-    const [isPending, startTransition] = useTransition();
+    const [selectedChar, setChar] = useState(null);
 
-    // const filteredPosts = useMemo(() => {
-    //     return posts.filter(item => item.name.toLowerCase().includes(text));
-    // }, [deferredValue]);
-
-    const filteredPosts = useMemo(() => {
-        return posts.filter(item => item.name.toLowerCase().includes(text));
-    }, [text]);
-
-    const onValueChange = (e) => {
-        startTransition(() => {
-            setText(e.target.value.toLowerCase());
-        });
+    const onCharSelected = (id) => {
+        setChar(id);
     }
 
     return (
-        <>
-            <input value={text} type='text' onChange={onValueChange} />
-
-            <hr />
-
-            <div>
-                {isPending ? <h4>Loading...</h4> :
-                    filteredPosts.map(post => (
-                        <div key={post._id}>
-                            <h4>{post._id} {post.name}</h4>
-                        </div>
-                    ))}
-            </div>
-        </>
-    );
+        <div className="app">
+            <AppHeader />
+            <main>
+                {/* <ErrorBoundary>
+                    <RandomChar />
+                </ErrorBoundary>
+                <div className="char__content">
+                    <ErrorBoundary>
+                        <CharList onCharSelected={onCharSelected} />
+                    </ErrorBoundary>
+                    <ErrorBoundary>
+                        <CharInfo charId={selectedChar} />
+                    </ErrorBoundary>
+                </div>
+                <img className="bg-decoration" src={decoration} alt="vision" /> */}
+                <AppBanner />
+                <ComicsList />
+            </main>
+        </div>
+    )
 }
 
+
 export default App;
-
-
-// import { useState } from "react";
-// import AppHeader from "../appHeader/AppHeader";
-// import RandomChar from "../randomChar/RandomChar";
-// import CharList from "../charList/CharList";
-// import CharInfo from "../charInfo/CharInfo";
-// import ComicsList from "../comicsList/ComicsList";
-// import AppBanner from "../appBanner/AppBanner";
-// import ErrorBoundary from "../errorBoundary/ErrorBoundary";
-// import TestComponent from "../testComponent/TestComponent";
-
-// import decoration from '../../resources/img/vision.png';
-
-// const App = () => {
-
-//     const [selectedChar, setChar] = useState(null);
-
-//     const onCharSelected = (id) => {
-//         setChar(id);
-//     }
-
-//     return (
-//         <div className="app">
-//             <TestComponent />
-//             <AppHeader />
-//             <main>
-//                 <ErrorBoundary>
-//                     <RandomChar />
-//                 </ErrorBoundary>
-//                 <div className="char__content">
-//                     <ErrorBoundary>
-//                         <CharList onCharSelected={onCharSelected} />
-//                     </ErrorBoundary>
-//                     <ErrorBoundary>
-//                         <CharInfo charId={selectedChar} />
-//                     </ErrorBoundary>
-//                 </div>
-//                 <img className="bg-decoration" src={decoration} alt="vision" />
-//                 {/* <AppBanner />
-//                 <ComicsList /> */}
-//             </main>
-//         </div>
-//     )
-// }
-
-
-// export default App;
