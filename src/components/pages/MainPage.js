@@ -30,6 +30,6 @@ const MainPage = () => {
             <img className="bg-decoration" src={decoration} alt="vision" />
         </>
     )
-}
+};
 
 export default MainPage;

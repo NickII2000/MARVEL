@@ -1,14 +1,7 @@
-import { useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
+import { MainPage, ComicsPage } from '../pages';
 import AppHeader from "../appHeader/AppHeader";
-
-import ComicsList from "../comicsList/ComicsList";
-import AppBanner from "../appBanner/AppBanner";
-
-
-
-// import { BrowserRouter } from "react-router-dom/cjs/react-router-dom.min";
 
 const App = () => {
 
@@ -19,10 +12,10 @@ const App = () => {
                 <main>
                     <Switch>
                         <Route exact path="/">
+                            <MainPage />
                         </Route>
                         <Route exact path="/comics">
-                            <AppBanner />
-                            <ComicsList />
+                            <ComicsPage />
                         </Route>
                     </Switch>
                 </main>
