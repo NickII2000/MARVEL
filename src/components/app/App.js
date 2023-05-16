@@ -47,7 +47,6 @@ function App() {
 
 export default App;
 
-
 // import { useState } from "react";
 // import AppHeader from "../appHeader/AppHeader";
 // import RandomChar from "../randomChar/RandomChar";
