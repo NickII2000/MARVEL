@@ -1,11 +1,36 @@
 import { useParams, Link } from 'react-router-dom';
+import { useState, useEffect } from "react";
 
+import useMarvelService from '../../services/MarvelService';
+import Spinner from '../spinner/Spinner';
+import ErrorMessage from '../errorMessage/ErrorMessage';
 import './singleComicPage.scss';
 import xMen from '../../resources/img/x-men.png';
 
 const SingleComicPage = () => {
-    const smth = useParams();
-    console.log(smth);
+    const comicId = useParams();
+    console.log(comicId);
+    const [comic, setComic] = useState(null);
+    const { loading, error, getComic, clearError } = useMarvelService();
+
+    useEffect(() => {
+        updateComic();
+    }, [comicId]);
+
+    const updateChar = () => {
+        const { charId } = props;
+        if (!charId) {
+            return;
+        }
+
+        clearError();
+        getCharacter(charId)
+            .then(onCharLoaded);
+    };
+
+    const onCharLoaded = (char) => {
+        setChar(char);
+    }
 
     return (
         <div className="single-comic">
