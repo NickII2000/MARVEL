@@ -17,6 +17,9 @@ const App = () => {
                         <Route exact path="/comics">
                             <ComicsPage />
                         </Route>
+                        <Route path='*'>
+
+                        </Route>
                     </Switch>
                 </main>
             </div>
