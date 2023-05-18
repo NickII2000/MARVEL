@@ -18,18 +18,13 @@ const SingleComicPage = () => {
     }, [comicId]);
 
     const updateChar = () => {
-        const { charId } = props;
-        if (!charId) {
-            return;
-        }
-
         clearError();
-        getCharacter(charId)
-            .then(onCharLoaded);
+        getComic(comicId)
+            .then(onComicLoaded);
     };
 
-    const onCharLoaded = (char) => {
-        setChar(char);
+    const onComicLoaded = (comic) => {
+        setComic(comic);
     }
 
     return (
