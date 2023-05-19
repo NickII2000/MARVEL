@@ -7,7 +7,7 @@ import ErrorMessage from '../errorMessage/ErrorMessage';
 import './singleComicPage.scss';
 
 const SingleComicPage = () => {
-    const comicId = useParams();
+    const { comicId } = useParams();
     console.log(comicId);
     const [comic, setComic] = useState(null);
     const { loading, error, getComic, clearError } = useMarvelService();
@@ -18,7 +18,7 @@ const SingleComicPage = () => {
 
     const updateComic = () => {
         clearError();
-        getComic(comicId.comicId)
+        getComic(comicId)
             .then(onComicLoaded);
     };
 
