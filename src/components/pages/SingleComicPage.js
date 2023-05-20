@@ -33,8 +33,8 @@ const SingleComicPage = () => {
     return (
         <>
             {errorMessage}
-            {/* {spinner} */}
-            {/* {content} */}
+            {spinner}
+            {content}
         </>
     )
 }
