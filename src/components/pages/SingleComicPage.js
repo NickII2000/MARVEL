@@ -34,7 +34,7 @@ const SingleComicPage = () => {
         <>
             {errorMessage}
             {/* {spinner} */}
-            {content}
+            {/* {content} */}
         </>
     )
 }
