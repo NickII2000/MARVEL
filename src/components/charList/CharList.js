@@ -98,11 +98,11 @@ const CharList = (props) => {
     const errorMessage = error ? <ErrorMessage /> : null;
     const spinner = loading && !newItemLoading ? <Spinner /> : null;
 
-    if (loading) {
-        import('./someFunc')
-            .then(obj => obj.default())
-            .catch();
-    }
+    // if (loading) {
+    //     import('./someFunc')
+    //         .then(obj => obj.default())
+    //         .catch();
+    // }
 
     return (
         <div className="char__list">
