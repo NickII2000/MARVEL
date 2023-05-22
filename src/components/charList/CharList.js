@@ -26,12 +26,7 @@ const CharList = (props) => {
             .then(onCharListLoaded);
     }
 
-    const onCharListLoaded = async (newCharList) => {
-
-        const { logger, secondLog } = await import('./someFunc');
-        logger();
-        secondLog();
-
+    const onCharListLoaded = (newCharList) => {
         let ended = false;
         if (newCharList.length < 9) {
             ended = true;
@@ -105,7 +100,7 @@ const CharList = (props) => {
 
     if (loading) {
         import('./someFunc')
-            .then(obj => obj.logger())
+            .then(obj => obj.default())
             .catch();
     }
 
