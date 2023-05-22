@@ -33,7 +33,7 @@ const CharInfo = (props) => {
         setChar(char);
     }
 
-    const sceleton = char || loading || error ? null : <Sceleton />;
+    const sceleton = char || loading || error ? <Sceleton /> : null;
     const errorMessage = error ? <ErrorMessage /> : null;
     const spinner = loading ? <Spinner /> : null;
     const content = (!loading && !error && char) ? < View char={char} /> : null;
