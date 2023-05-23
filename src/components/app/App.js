@@ -11,6 +11,7 @@ const Form = (props) => {
                     <label htmlFor="exampleFormControlInput1" className="form-label mt-3">Email address</label>
                     <input value={props.mail} type="email" className='form-control' id="exampleFormControlInput1" placeholder="name@example.com" />
                 </div>
+                <br />
                 <div className="mb-3">
                     <label htmlFor="exampleFormControlTextarea1" className="form-label">Example textarea</label>
                     <textarea value={props.text} className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
