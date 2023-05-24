@@ -24,8 +24,8 @@ const Form = (props) => {
 
 function App() {
     const [data, setData] = useState({
-        mail: "name@example.com",
-        text: 'some text'
+        mail: "second@example.com",
+        text: 'another text'
     });
 
     return (
