@@ -1,4 +1,4 @@
-import { useState, memo, Component } from 'react';
+import { useState, memo, useCallback } from 'react';
 import { Container } from 'react-bootstrap';
 // import './App.css';
 
@@ -60,9 +60,9 @@ function App() {
         text: 'some text'
     });
 
-    const onLog = () => {
+    const onLog = useCallback(() => {
         console.log('wow');
-    }
+    }, []);
 
     return (
         <>
