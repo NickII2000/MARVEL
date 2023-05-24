@@ -40,7 +40,7 @@ function App() {
             <button
                 onClick={() => setData({
                     mail: {
-                        name: "ame@example.com"
+                        name: "name@example.com"
                     },
                     text: 'some text'
                 })}>
