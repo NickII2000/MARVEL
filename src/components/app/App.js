@@ -31,9 +31,9 @@ import { Container } from 'react-bootstrap';
 //     }
 // }
 
-function propsCompare(prevProps, nextProps) {
-    return prevProps.mail.name === nextProps.mail.name && prevProps.text === nextProps.text;
-}
+// function propsCompare(prevProps, nextProps) {
+//     return prevProps.mail.name === nextProps.mail.name && prevProps.text === nextProps.text;
+// }
 
 const Form = memo((props) => {
     console.log('render');
@@ -42,7 +42,7 @@ const Form = memo((props) => {
             <form className="w-50 border mt-5 p-3 m-auto">
                 <div className="mb-3">
                     <label htmlFor="exampleFormControlInput1" className="form-label mt-3">Email address</label>
-                    <input value={props.mail.name} type="email" className='form-control' id="exampleFormControlInput1" placeholder="name@example.com" />
+                    <input value={props.mail} type="email" className='form-control' id="exampleFormControlInput1" placeholder="name@example.com" />
                 </div>
                 <br />
                 <div className="mb-3">
@@ -52,13 +52,11 @@ const Form = memo((props) => {
             </form>
         </Container>
     )
-}, propsCompare);
+});
 
 function App() {
     const [data, setData] = useState({
-        mail: {
-            name: "name@example.com"
-        },
+        mail: "name@example.com",
         text: 'some text'
     });
 
@@ -68,9 +66,7 @@ function App() {
             <br />
             <button
                 onClick={() => setData({
-                    mail: {
-                        name: "!!!name@example.com"
-                    },
+                    mail: "name@example.com",
                     text: 'some text'
                 })}>
                 Click me
