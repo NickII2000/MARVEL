@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import { useState, memo } from 'react';
 import { Container } from 'react-bootstrap';
 // import './App.css';
 
 
-const Form = (props) => {
+const Form = memo((props) => {
     console.log('render');
     return (
         <Container>
@@ -20,7 +20,7 @@ const Form = (props) => {
             </form>
         </Container>
     )
-}
+});
 
 function App() {
     const [data, setData] = useState({
