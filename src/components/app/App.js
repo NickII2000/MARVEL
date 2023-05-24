@@ -5,9 +5,10 @@ import { Container } from 'react-bootstrap';
 class Form extends Component {
 
     shouldComponentUpdate(nextProps) {
-        if (this.props.mail.name === nextProps.mail.name) {
-            return false;
-        }
+        // if (this.props.mail.name === nextProps.mail.name) {
+        //     return false;
+        // } return true;
+        return !(this.props.mail.name === nextProps.mail.name);
     };
 
     render() {
@@ -68,7 +69,7 @@ function App() {
             <button
                 onClick={() => setData({
                     mail: {
-                        name: "name@example.com"
+                        name: "!!!name@example.com"
                     },
                     text: 'some text'
                 })}>
