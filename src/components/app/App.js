@@ -62,7 +62,7 @@ function App() {
 
     return (
         <>
-            <Form mail={data.mail} text={data.text} />
+            <Form mail={data.mail} text={data.text} onLog={() => console.log('wow')} />
             <br />
             <button
                 onClick={() => setData({
