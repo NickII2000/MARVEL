@@ -4,7 +4,7 @@ import { Container } from 'react-bootstrap';
 
 
 const Form = (props) => {
-
+    console.log('render');
     return (
         <Container>
             <form className="w-50 border mt-5 p-3 m-auto">
