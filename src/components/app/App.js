@@ -10,7 +10,7 @@ class Form extends PureComponent {
                 <form className="w-50 border mt-5 p-3 m-auto">
                     <div className="mb-3">
                         <label htmlFor="exampleFormControlInput1" className="form-label mt-3">Email address</label>
-                        <input value={this.props.mail.name} type="email" className='form-control' id="exampleFormControlInput1" placeholder="name@example.com" />
+                        <input value={this.props.mail} type="email" className='form-control' id="exampleFormControlInput1" placeholder="name@example.com" />
                     </div>
                     <br />
                     <div className="mb-3">
