@@ -1,8 +1,15 @@
-import { useState, memo, PureComponent } from 'react';
+import { useState, memo, Component } from 'react';
 import { Container } from 'react-bootstrap';
 // import './App.css';
 
-class Form extends PureComponent {
+class Form extends Component {
+
+    shouldComponentUpdate(nextProps) {
+        if (this.props.mail.name === nextProps.mail.name) {
+            return false;
+        }
+    };
+
     render() {
         console.log('render');
         return (
@@ -10,7 +17,7 @@ class Form extends PureComponent {
                 <form className="w-50 border mt-5 p-3 m-auto">
                     <div className="mb-3">
                         <label htmlFor="exampleFormControlInput1" className="form-label mt-3">Email address</label>
-                        <input value={this.props.mail} type="email" className='form-control' id="exampleFormControlInput1" placeholder="name@example.com" />
+                        <input value={this.props.mail.name} type="email" className='form-control' id="exampleFormControlInput1" placeholder="name@example.com" />
                     </div>
                     <br />
                     <div className="mb-3">
@@ -48,7 +55,9 @@ class Form extends PureComponent {
 
 function App() {
     const [data, setData] = useState({
-        mail: "name@example.com",
+        mail: {
+            name: "name@example.com"
+        },
         text: 'some text'
     });
 
@@ -58,7 +67,9 @@ function App() {
             <br />
             <button
                 onClick={() => setData({
-                    mail: "name@example.com",
+                    mail: {
+                        name: "name@example.com"
+                    },
                     text: 'some text'
                 })}>
                 Click me
