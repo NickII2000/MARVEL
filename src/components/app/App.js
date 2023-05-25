@@ -63,7 +63,6 @@ class InputComponent extends Component {
     }
 }
 
-
 function App() {
     const [data, setData] = useState({
         mail: "name@example.com",
