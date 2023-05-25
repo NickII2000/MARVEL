@@ -1,4 +1,4 @@
-import { useState, memo, useCallback } from 'react';
+import { useState, Component } from 'react';
 import { Container } from 'react-bootstrap';
 // import './App.css';
 
@@ -35,8 +35,9 @@ import { Container } from 'react-bootstrap';
 //     return prevProps.mail.name === nextProps.mail.name && prevProps.text === nextProps.text;
 // }
 
-const Form = memo((props) => {
+const Form = (props) => {
     console.log('render');
+
     return (
         <Container>
             <form className="w-50 border mt-5 p-3 m-auto">
@@ -52,7 +53,16 @@ const Form = memo((props) => {
             </form>
         </Container>
     )
-});
+};
+
+class InputComponent extends Component {
+    render() {
+        return (
+            <input value={this.props.mail} type="email" className='form-control' placeholder="name@example.com" />
+        )
+    }
+}
+
 
 function App() {
     const [data, setData] = useState({
@@ -60,18 +70,14 @@ function App() {
         text: 'some text'
     });
 
-    const onLog = useCallback(() => {
-        console.log('wow');
-    }, []);
-
     return (
         <>
-            <Form mail={data.mail} text={data.text} onLog={onLog} />
+            <Form mail={data.mail} text={data.text} />
             <br />
             <button
                 onClick={() => setData({
-                    mail: "!!!name@example.com",
-                    text: 'some text'
+                    mail: "second@example.com",
+                    text: 'another text'
                 })}>
                 Click me
             </button>
