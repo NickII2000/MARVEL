@@ -44,8 +44,8 @@ const dataContext = createContext({
 // console.dir(dataContext);
 
 const { Provider, Consumer } = dataContext;
-console.log(Provider);
-console.log(Consumer);
+console.dir(Provider);
+console.dir(Consumer);
 
 const Form = (props) => {
     console.log('render');
@@ -55,7 +55,7 @@ const Form = (props) => {
             <form className="w-50 border mt-5 p-3 m-auto">
                 <div className="mb-3">
                     <label htmlFor="exampleFormControlInput1" className="form-label mt-3">Email address</label>
-                    <InputComponent mail={props.mail} />
+                    <InputComponent />
                 </div>
                 <br />
                 <div className="mb-3">
@@ -70,7 +70,19 @@ const Form = (props) => {
 class InputComponent extends Component {
     render() {
         return (
-            <input value={this.props.mail} type="email" className='form-control' placeholder="name@example.com" />
+            <Consumer>
+                {
+                    value => {
+                        return (
+                            <input
+                                value={value.mail}
+                                type="email"
+                                className='form-control'
+                                placeholder="name@example.com" />
+                        )
+                    }
+                }
+            </Consumer>
         )
     }
 }
@@ -82,8 +94,8 @@ function App() {
     });
 
     return (
-        <>
-            <Form mail={data.mail} text={data.text} />
+        <Provider value={data}>
+            <Form text={data.text} />
             <br />
             <button
                 onClick={() => setData({
@@ -92,7 +104,7 @@ function App() {
                 })}>
                 Click me
             </button>
-        </>
+        </Provider>
     );
 }
 
