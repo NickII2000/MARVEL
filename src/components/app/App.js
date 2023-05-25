@@ -8,8 +8,13 @@ const { Provider } = dataContext;
 function App() {
     const [data, setData] = useState({
         mail: "name@example.com",
-        text: 'some text'
+        text: 'some text',
+        forceChangeMail: forceChangeMail
     });
+
+    function forceChangeMail() {
+        setData({ ...data, mail: 'test@gmail.com' });
+    }
 
     return (
         <Provider value={data}>

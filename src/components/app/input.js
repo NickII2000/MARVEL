@@ -10,7 +10,8 @@ const InputComponent = () => {
             value={context.mail}
             type="email"
             className='form-control'
-            placeholder="name@example.com" />
+            placeholder="name@example.com"
+            onFource={context.forceChangeMail} />
     )
 };
 
