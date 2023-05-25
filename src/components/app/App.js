@@ -35,6 +35,18 @@ import { Container } from 'react-bootstrap';
 //     return prevProps.mail.name === nextProps.mail.name && prevProps.text === nextProps.text;
 // }
 
+
+const dataContext = createContext({
+    mail: "name@example.com",
+    text: 'some text'
+});
+
+// console.dir(dataContext);
+
+const { Provider, Consumer } = dataContext;
+console.log(Provider);
+console.log(Consumer);
+
 const Form = (props) => {
     console.log('render');
 
@@ -62,13 +74,6 @@ class InputComponent extends Component {
         )
     }
 }
-
-const dataContext = createContext({
-    mail: "name@example.com",
-    text: 'some text'
-});
-
-console.dir(dataContext);
 
 function App() {
     const [data, setData] = useState({
