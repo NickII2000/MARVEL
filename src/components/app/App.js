@@ -17,7 +17,7 @@ function App() {
     }
 
     return (
-        <Provider value={{}}>
+        <Provider value={data}>
             <Form text={data.text} />
             <br />
             <button
