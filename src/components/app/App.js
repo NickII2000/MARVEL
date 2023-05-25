@@ -88,12 +88,10 @@ class InputComponent extends Component {
 }
 
 function App() {
-    const [data, setData] = useState({});
-
-    // const [data, setData] = useState({
-    //     mail: "name@example.com",
-    //     text: 'some text'
-    // });
+    const [data, setData] = useState({
+        mail: "name@example.com",
+        text: 'some text'
+    });
 
     return (
         <Provider value={data}>
