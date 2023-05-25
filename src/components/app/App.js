@@ -43,9 +43,10 @@ const dataContext = createContext({
 
 // console.dir(dataContext);
 
-const { Provider, Consumer } = dataContext;
-console.dir(Provider);
-console.dir(Consumer);
+const { Provider } = dataContext;
+// const { Provider, Consumer } = dataContext;
+// console.dir(Provider);
+// console.dir(Consumer);
 
 const Form = (props) => {
     console.log('render');
