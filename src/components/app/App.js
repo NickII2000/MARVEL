@@ -17,7 +17,7 @@ function App() {
     }
 
     return (
-        <Provider value={data}>
+        <>
             <Form text={data.text} />
             <br />
             <button
@@ -28,7 +28,7 @@ function App() {
                 })}>
                 Click me
             </button>
-        </Provider>
+        </>
     );
 }
 
