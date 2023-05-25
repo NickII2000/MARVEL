@@ -1,4 +1,4 @@
-import { useState, Component, createContext } from 'react';
+import { useState, Component, createContext, useContext } from 'react';
 import { Container } from 'react-bootstrap';
 // import './App.css';
 
@@ -67,25 +67,48 @@ const Form = (props) => {
     )
 };
 
-class InputComponent extends Component {
-    render() {
-        return (
-            <Consumer>
-                {
-                    value => {
-                        return (
-                            <input
-                                value={value.mail}
-                                type="email"
-                                className='form-control'
-                                placeholder="name@example.com" />
-                        )
-                    }
-                }
-            </Consumer>
-        )
-    }
-}
+const InputComponent = () => {
+
+    const context = useContext(dataContext);
+
+    return (
+        <input
+            value={context.mail}
+            type="email"
+            className='form-control'
+            placeholder="name@example.com" />
+    )
+};
+
+// class InputComponent extends Component {
+
+//     static contextType = dataContext;
+
+//     render() {
+//         return (
+//             // <Consumer>
+//             //     {
+//             //         value => {
+//             //             return (
+//             //                 <input
+//             //                     value={value.mail}
+//             //                     type="email"
+//             //                     className='form-control'
+//             //                     placeholder="name@example.com" />
+//             //             )
+//             //         }
+//             //     }
+//             // </Consumer>
+//             <input
+//                 value={this.context.mail}
+//                 type="email"
+//                 className='form-control'
+//                 placeholder="name@example.com" />
+//         )
+//     }
+// }
+
+// InputComponent.contextType = dataContext;
 
 function App() {
     const [data, setData] = useState({
