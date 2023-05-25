@@ -1,8 +1,8 @@
 import { createContext } from 'react';
 
 const dataContext = createContext({
-    mail: "name@example.com",
-    text: 'some text'
+    mail: "default@example.com",
+    text: 'default  text'
 });
 
 export default dataContext;
