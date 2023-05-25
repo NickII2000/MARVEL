@@ -1,4 +1,4 @@
-import { useState, Component } from 'react';
+import { useState, Component, createContext } from 'react';
 import { Container } from 'react-bootstrap';
 // import './App.css';
 
@@ -62,6 +62,13 @@ class InputComponent extends Component {
         )
     }
 }
+
+const dataContext = createContext({
+    mail: "name@example.com",
+    text: 'some text'
+});
+
+console.dir(dataContext);
 
 function App() {
     const [data, setData] = useState({
