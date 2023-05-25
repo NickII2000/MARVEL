@@ -1,4 +1,5 @@
 import { Container } from 'react-bootstrap';
+import InputComponent from './input';
 
 const Form = (props) => {
     console.log('render');
