@@ -11,7 +11,7 @@ const InputComponent = () => {
             type="email"
             className='form-control'
             placeholder="name@example.com"
-            onFource={context.forceChangeMail} />
+            onFocus={context.forceChangeMail} />
     )
 };
 
