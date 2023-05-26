@@ -23,7 +23,7 @@ function App() {
             <button
                 onClick={() => setData({
                     ...data,
-                    mail: "second2@example.com",
+                    mail: "second@example.com",
                     text: 'another text',
                 })}>
                 Click me
