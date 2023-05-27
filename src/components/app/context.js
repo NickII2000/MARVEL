@@ -1,9 +1,5 @@
 import { createContext } from 'react';
 
-const dataContext = createContext({
-    mail: "default@example.com",
-    text: 'default  text',
-    fourceChangeMail: () => { }
-});
+const dataContext = createContext();
 
 export default dataContext;
