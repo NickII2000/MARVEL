@@ -3,7 +3,16 @@ import { Container } from 'react-bootstrap';
 import './App.css';
 
 function reducer(state, action) {
-
+    switch (action.type) {
+        case 'toggle':
+            return { autoplay: !state.autoplay };
+        case 'slow':
+            return { autoplay: 300 };
+        case 'toggle':
+            return { autoplay: 700 };
+        default:
+            throw new Error();
+    }
 }
 
 const Slider = () => {
