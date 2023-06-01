@@ -18,7 +18,7 @@ function reducer(state, action) {
 const Slider = () => {
     const [slide, setSlide] = useState(0);
     // const [autoplay, setAutoplay] = useState(false);
-    const [autoplay, dispatch] = useReducer();
+    const [autoplay, dispatch] = useReducer(reducer, false);
 
     function changeSlide(i) {
         setSlide(slide => slide + i);
