@@ -38,13 +38,13 @@ const Slider = () => {
                         onClick={() => changeSlide(1)}>+1</button>
                     <button
                         className="btn btn-primary me-2"
-                        onClick={() => dispatch({ type: 'toggle' }) > toggle autoplay</button>
-                <button
-                    className="btn btn-primary me-2"
-                    onClick={() => dispatch({ type: 'slow' }) > slow autoplay</button>
-            <button
-                className="btn btn-primary me-2"
-                onClick={() => dispatch({ type: 'fast' }) > fast autoplay</button>
+                        onClick={() => dispatch({ type: 'toggle' })} > toggle autoplay</button>
+                    <button
+                        className="btn btn-primary me-2"
+                        onClick={() => dispatch({ type: 'slow' })} > slow autoplay</button>
+                    <button
+                        className="btn btn-primary me-2"
+                        onClick={() => dispatch({ type: 'fast' })} > fast autoplay</button>
                 </div >
             </div >
         </Container >
