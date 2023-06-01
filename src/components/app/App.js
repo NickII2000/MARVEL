@@ -1,10 +1,11 @@
-import { useState } from 'react';
+import { useState, useReducer } from 'react';
 import { Container } from 'react-bootstrap';
 import './App.css';
 
 const Slider = () => {
     const [slide, setSlide] = useState(0);
-    const [autoplay, setAutoplay] = useState(false);
+    // const [autoplay, setAutoplay] = useState(false);
+    const [autoplay, dispatch] = useReducer();
 
     function changeSlide(i) {
         setSlide(slide => slide + i);
