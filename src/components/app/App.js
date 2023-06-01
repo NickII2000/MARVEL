@@ -2,6 +2,10 @@ import { useState, useReducer } from 'react';
 import { Container } from 'react-bootstrap';
 import './App.css';
 
+function reducer(state, action) {
+
+}
+
 const Slider = () => {
     const [slide, setSlide] = useState(0);
     // const [autoplay, setAutoplay] = useState(false);
@@ -23,6 +27,12 @@ const Slider = () => {
                     <button
                         className="btn btn-primary me-2"
                         onClick={() => changeSlide(1)}>+1</button>
+                    <button
+                        className="btn btn-primary me-2"
+                        onClick={() => setAutoplay(!autoplay)}>toggle autoplay</button>
+                    <button
+                        className="btn btn-primary me-2"
+                        onClick={() => setAutoplay(!autoplay)}>toggle autoplay</button>
                     <button
                         className="btn btn-primary me-2"
                         onClick={() => setAutoplay(!autoplay)}>toggle autoplay</button>
