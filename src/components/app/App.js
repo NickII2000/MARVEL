@@ -1,6 +1,6 @@
 import { useState, useReducer } from 'react';
 import { Container } from 'react-bootstrap';
-import './App.css';
+// import './App.css';
 
 function reducer(state, action) {
     switch (action.type) {
