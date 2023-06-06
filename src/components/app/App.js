@@ -1,9 +1,18 @@
-import {useState, useEffect} from 'react';
-import {Container} from 'react-bootstrap';
+import { useState, useEffect } from 'react';
+import { Container } from 'react-bootstrap';
 import './App.css';
 
-const getDataFromFirstFetch = () => {return 10};
-const getDataFromSecondFetch = () => {return 20};
+const f = (a) => {
+    return (b) => {
+        console.log(a + b);
+    }
+}
+
+f(1)(2);
+f(1, 2)(9);
+
+const getDataFromFirstFetch = () => { return 10 };
+const getDataFromSecondFetch = () => { return 20 };
 
 const SliderFirst = () => {
     const [slide, setSlide] = useState(0);
@@ -22,10 +31,10 @@ const SliderFirst = () => {
                 <img className="d-block w-100" src="https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-eiffel-tower.jpg" alt="slide" />
                 <div className="text-center mt-5">Active slide {slide}</div>
                 <div className="buttons mt-3">
-                    <button 
+                    <button
                         className="btn btn-primary me-2"
                         onClick={() => changeSlide(-1)}>-1</button>
-                    <button 
+                    <button
                         className="btn btn-primary me-2"
                         onClick={() => changeSlide(1)}>+1</button>
                 </div>
@@ -50,15 +59,15 @@ const SliderSecond = () => {
         <Container>
             <div className="slider w-50 m-auto">
                 <img className="d-block w-100" src="https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-eiffel-tower.jpg" alt="slide" />
-                <div className="text-center mt-5">Active slide {slide} <br/>{autoplay ? 'auto' : null} </div>
+                <div className="text-center mt-5">Active slide {slide} <br />{autoplay ? 'auto' : null} </div>
                 <div className="buttons mt-3">
-                    <button 
+                    <button
                         className="btn btn-primary me-2"
                         onClick={() => changeSlide(-1)}>-1</button>
-                    <button 
+                    <button
                         className="btn btn-primary me-2"
                         onClick={() => changeSlide(1)}>+1</button>
-                    <button 
+                    <button
                         className="btn btn-primary me-2"
                         onClick={() => setAutoplay(autoplay => !autoplay)}>toggle autoplay</button>
                 </div>
@@ -70,8 +79,8 @@ const SliderSecond = () => {
 function App() {
     return (
         <>
-            <SliderFirst/>
-            <SliderSecond/>
+            <SliderFirst />
+            <SliderSecond />
         </>
     );
 }
