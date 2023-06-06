@@ -11,13 +11,13 @@ import './App.css';
 
 // f(1)(2);
 
-const f = () => {
-    return class extends Component {
-        render() {
-            return <h1>Hello</h1>
-        }
-    }
-}
+// const f = () => {
+//     return class extends Component {
+//         render() {
+//             return <h1>Hello</h1>
+//         }
+//     }
+// }
 
 const getDataFromFirstFetch = () => { return 10 };
 const getDataFromSecondFetch = () => { return 20 };
