@@ -1,14 +1,23 @@
+import { Component } from 'react';
 import { useState, useEffect } from 'react';
 import { Container } from 'react-bootstrap';
 import './App.css';
 
+// const f = (a) => {
+//     return (b) => {
+//         console.log(a + b);
+//     }
+// }
+
+// f(1)(2);
+
 const f = (a) => {
-    return (b) => {
-        console.log(a + b);
+    return class extends Component {
+        render() {
+            return <h1>Hello</h1>
+        }
     }
 }
-
-f(1)(2);
 
 const getDataFromFirstFetch = () => { return 10 };
 const getDataFromSecondFetch = () => { return 20 };
