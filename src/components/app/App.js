@@ -20,8 +20,8 @@ import './App.css';
 //     }
 // }
 
-const withSlider = { BaseComponent, getData } => {
-    return { props } => {
+const withSlider = (BaseComponent, getData) => {
+    return (props) => {
         const [slide, setSlide] = useState(0);
         const [autoplay, setAutoplay] = useState(false)
 
@@ -33,7 +33,11 @@ const withSlider = { BaseComponent, getData } => {
             setSlide(slide => slide + i);
         }
 
-        return <BaseComponent />
+        return <BaseComponent
+            slide={slide}
+            autoplay={autoplay}
+            setSlide={setSlide}
+            setAutoplay={setAutoplay} />
     }
 }
 
