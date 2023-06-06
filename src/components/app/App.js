@@ -9,7 +9,6 @@ const f = (a) => {
 }
 
 f(1)(2);
-f(1, 2)(9);
 
 const getDataFromFirstFetch = () => { return 10 };
 const getDataFromSecondFetch = () => { return 20 };
