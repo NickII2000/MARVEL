@@ -110,6 +110,12 @@ const SliderSecond = (props) => {
 const SliderWithFirstFetch = withSlider(SliderFirst, getDataFromFirstFetch);
 const SliderWithSecondFetch = withSlider(SliderSecond, getDataFromSecondFetch);
 
+const Hello = () => {
+    return (
+        <h1>Hello</h1>
+    )
+}
+
 function App() {
     return (
         <>
