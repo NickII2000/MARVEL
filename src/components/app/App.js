@@ -34,6 +34,7 @@ const withSlider = (BaseComponent, getData) => {
         }
 
         return <BaseComponent
+            {...props}
             slide={slide}
             autoplay={autoplay}
             setSlide={setSlide}
@@ -106,11 +107,16 @@ const SliderSecond = (props) => {
     )
 }
 
+const SliderWithFirstFetch = withSlider(SliderFirst, getDataFromFirstFetch);
+const SliderWithSecondFetch = withSlider(SliderSecond, getDataFromSecondFetch);
+
 function App() {
     return (
         <>
-            <SliderFirst />
-            <SliderSecond />
+            {/* <SliderFirst />
+            <SliderSecond /> */}
+            <SliderWithFirstFetch />
+            <SliderWithSecondFetch />
         </>
     );
 }
