@@ -55,7 +55,7 @@ const SliderFirst = (props) => {
     // function changeSlide(i) {
     //     setSlide(slide => slide + i);
     // }
-
+    console.log(props.name);
     return (
         <Container>
             <div className="slider w-50 m-auto">
@@ -85,7 +85,7 @@ const SliderSecond = (props) => {
     // function changeSlide(i) {
     //     setSlide(slide => slide + i);
     // }
-
+    console.log(props.name);
     return (
         <Container>
             <div className="slider w-50 m-auto">
@@ -115,8 +115,8 @@ function App() {
         <>
             {/* <SliderFirst />
             <SliderSecond /> */}
-            <SliderWithFirstFetch />
-            <SliderWithSecondFetch />
+            <SliderWithFirstFetch name={'name1'} />
+            <SliderWithSecondFetch name={'name2'} />
         </>
     );
 }
