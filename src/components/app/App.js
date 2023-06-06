@@ -121,6 +121,7 @@ function App() {
         <>
             {/* <SliderFirst />
             <SliderSecond /> */}
+            <Hello />
             <SliderWithFirstFetch name={'name1'} />
             <SliderWithSecondFetch name={'name2'} />
         </>
