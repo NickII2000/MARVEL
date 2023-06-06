@@ -11,7 +11,7 @@ import './App.css';
 
 // f(1)(2);
 
-const f = (a) => {
+const f = () => {
     return class extends Component {
         render() {
             return <h1>Hello</h1>
