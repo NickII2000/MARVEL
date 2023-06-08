@@ -1,5 +1,5 @@
-// import BaseComponent from 'bootstrap/js/dist/base-component';
-// import { Component } from 'react';
+import BaseComponent from 'bootstrap/js/dist/base-component';
+import { Component } from 'react';
 import { useState, useEffect } from 'react';
 import { Container } from 'react-bootstrap';
 import './App.css';
@@ -135,8 +135,8 @@ function App() {
             <SliderSecond /> */}
             {/* <R1 /> */}
             <HelloWithLogger />
-            <SliderWithFirstFetch name={'name100'} />
-            <SliderWithSecondFetch name={'name200'} />
+            <SliderWithFirstFetch name={'name1'} />
+            <SliderWithSecondFetch name={'name2'} />
         </>
     );
 }
