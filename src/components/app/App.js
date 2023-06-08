@@ -1,5 +1,5 @@
 // import BaseComponent from 'bootstrap/js/dist/base-component';
-import { Component } from 'react';
+// import { Component } from 'react';
 import { useState, useEffect } from 'react';
 import { Container } from 'react-bootstrap';
 import './App.css';
