@@ -12,15 +12,13 @@ import './App.css';
 
 // f(1)(2);
 
-const f = () => {
-    return class extends Component {
-        render() {
-            return (<h1>Hello  f()</h1>)
-        }
-    }
-}
-
-const R1 = f();
+// const f = () => {
+//     return class extends Component {
+//         render() {
+//             return <h1>Hello</h1>
+//         }
+//     }
+// }
 
 const withSlider = (BaseComponent, getData) => {
     return (props) => {
