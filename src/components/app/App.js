@@ -133,7 +133,7 @@ function App() {
             <SliderSecond /> */}
             {/* <R1 /> */}
             <HelloWithLogger />
-            <SliderWithFirstFetch name={'name111'} />
+            <SliderWithFirstFetch name={'name1'} />
             <SliderWithSecondFetch name={'name2'} />
         </>
     );
