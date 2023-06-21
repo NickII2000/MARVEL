@@ -22,7 +22,10 @@ const Modal = (props) => {
     return (
         <Transition in={props.show} timeout={duration}>
             {state => (
-                <div className="modal mt-5 d-block">
+                <div className="modal mt-5 d-block" style={{
+                    ...defaultStyle,
+                    ...transitionStyles[state]
+                }}>
                     <div className="modal-dialog">
                         <div className="modal-content">
                             <div className="modal-header">
