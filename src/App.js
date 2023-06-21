@@ -10,6 +10,7 @@ const Modal = (props) => {
     const defaultStyle = {
         transition: `opacity ${duration}ms ease-in-out`,
         opacity: 0,
+        visibility: 'hidden',
     }
 
     const transitionStyles = {
