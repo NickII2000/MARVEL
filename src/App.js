@@ -21,7 +21,7 @@ const Modal = (props) => {
     };
 
     return (
-        <Transition in={props.show} timeout={duration} mountOnEnter unmountOnExit>
+        <Transition in={props.show} timeout={duration} unmountOnExit>
             {state => (
                 <div className="modal mt-5 d-block" style={{
                     ...defaultStyle,
