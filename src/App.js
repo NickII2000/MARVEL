@@ -5,7 +5,7 @@ import './App.css';
 
 const Modal = (props) => {
 
-    const duration = 1200;
+    const duration = 1300;
 
     const defaultStyle = {
         transition: `all ${duration}ms ease-in-out`,
