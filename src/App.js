@@ -6,7 +6,7 @@ import './App.css';
 
 const Modal = (props) => {
 
-    const duration = 300;
+    const duration = 1300;
 
     return (
         <CSSTransition
