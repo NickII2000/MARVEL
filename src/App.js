@@ -14,7 +14,7 @@ const Modal = (props) => {
             timeout={duration}
             onEnter={() => props.setShowTrigger(false)}
             onExited={() => props.setShowTrigger(true)}
-            unmountOnExit
+            // unmountOnExit
             classNames='modal'>
             <div className="modal mt-5 d-block">
                 <div className="modal-dialog">
