@@ -9,7 +9,6 @@ import mjolnir from '../../resources/img/mjolnir.png';
 const RandomChar = () => {
 
     const [char, setChar] = useState(null);
-
     const { loading, error, getCharacter, clearError } = useMarvelService();
 
     useEffect(() => {
@@ -30,16 +29,13 @@ const RandomChar = () => {
         // const id = Math.floor(Math.random() * (1011400 - 1011000) + 1011000);
         // id c ошибкой: 1011049, ниже короткий диапазон с 1011049
         const id = Math.floor(Math.random() * (1011050 - 1011045) + 1011045);
-        console.log(id);
-
-
+        console.log(id); // выводим номер id
         getCharacter(id)
             .then(onCharLoaded);
     }
 
     const errorMessage = error ? <ErrorMessage /> : null;
     const spinner = loading ? <Spinner /> : null;
-
     const content = (!loading && !error && char) ? <View char={char} /> : null;
 
     return (
