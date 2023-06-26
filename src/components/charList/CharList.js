@@ -93,6 +93,7 @@ const CharList = (props) => {
             <ul className="char__grid">
                 <TransitionGroup component={null}>
                     {items}
+
                 </TransitionGroup>
             </ul>
         )
