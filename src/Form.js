@@ -1,5 +1,16 @@
 import { useFormik } from 'formik';
 
+const formik = useFormik({
+    initialValues: {
+        name: '',
+        email: '',
+        amount: 0,
+        currency: '',
+        text: '',
+        terms: false,
+    }
+})
+
 const Form = () => {
     return (
         <form className="form">
