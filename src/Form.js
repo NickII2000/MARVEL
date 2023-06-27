@@ -4,11 +4,11 @@ const Form = () => {
 
     const formik = useFormik({
         initialValues: {
-            name: '',
-            email: '',
-            amount: 0,
+            name: 'Nick',
+            email: 'q@lkjlk',
+            amount: 123,
             currency: '',
-            text: '',
+            text: 'text',
             terms: false,
         },
         onSubmit: values => console.log(JSON.stringify(values, null, 2))
@@ -60,9 +60,9 @@ const Form = () => {
                 onChange={formik.handleChange}
             />
             <label className="checkbox">
-                <input name="terms" type="checkbox" />
-                value={formik.values.terms}
-                onChange={formik.handleChange}
+                <input name="terms" type="checkbox"
+                    value={formik.values.terms}
+                    onChange={formik.handleChange} />
                 Соглашаетесь с политикой конфиденциальности?
             </label>
             <button type="submit">Отправить</button>
