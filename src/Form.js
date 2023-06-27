@@ -8,7 +8,8 @@ const formik = useFormik({
         currency: '',
         text: '',
         terms: false,
-    }
+    },
+    onSubmit: values => console.log(JSON.stringify(values, null, 2))
 })
 
 const Form = () => {
