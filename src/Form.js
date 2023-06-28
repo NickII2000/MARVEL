@@ -11,9 +11,13 @@ const validate = values => {
 
     if (!values.email) {
         errors.email = 'Обязательное поле!';
-    } else if (values.email.length < 2) {
-        errors.email = 'Минимум 2 символа для заполнения!';
+    } else if (
+        !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
+    ) {
+        errors.email = 'Некорректный электронный адрес!';
     }
+
+    return errors;
 
 }
 
@@ -28,6 +32,7 @@ const Form = () => {
             text: 'text',
             terms: false,
         },
+        validate,
         onSubmit: values => console.log(JSON.stringify(values, null, 2))
     });
 
@@ -42,6 +47,7 @@ const Form = () => {
                 value={formik.values.name}
                 onChange={formik.handleChange}
             />
+            {formik.errors.name ? <div>{formik.errors.name}</div> : <div> OK </div>}
             <label htmlFor="email">Ваша почта</label>
             <input
                 id="email"
@@ -50,6 +56,7 @@ const Form = () => {
                 value={formik.values.email}
                 onChange={formik.handleChange}
             />
+            {formik.errors.email ? <div>{formik.errors.email}</div> : <div> OK </div>}
             <label htmlFor="amount">Количество</label>
             <input
                 id="amount"
@@ -83,7 +90,7 @@ const Form = () => {
                 Соглашаетесь с политикой конфиденциальности?
             </label>
             <button type="submit">Отправить</button>
-        </form>
+        </form >
     )
 }
 
