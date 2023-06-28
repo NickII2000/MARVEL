@@ -1,5 +1,16 @@
 import { useFormik } from 'formik';
 
+const validate = values => {
+    const errors = {};
+
+    if (!values.name) {
+        errors.name = 'Обязательное поле!';
+    } else if (values.name.length < 2) {
+        errors.name = 'Минимум 2 символа для заполнения!';
+    }
+
+}
+
 const Form = () => {
 
     const formik = useFormik({
