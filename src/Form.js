@@ -1,25 +1,26 @@
 import { useFormik } from 'formik';
+import * as Yup from 'yup';
 
-const validate = values => {
-    const errors = {};
+// const validate = values => {
+//     const errors = {};
 
-    if (!values.name) {
-        errors.name = 'Обязательное поле!';
-    } else if (values.name.length < 2) {
-        errors.name = 'Минимум 2 символа для заполнения!';
-    }
+//     if (!values.name) {
+//         errors.name = 'Обязательное поле!';
+//     } else if (values.name.length < 2) {
+//         errors.name = 'Минимум 2 символа для заполнения!';
+//     }
 
-    if (!values.email) {
-        errors.email = 'Обязательное поле!';
-    } else if (
-        !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-    ) {
-        errors.email = 'Некорректный электронный адрес!';
-    }
+//     if (!values.email) {
+//         errors.email = 'Обязательное поле!';
+//     } else if (
+//         !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
+//     ) {
+//         errors.email = 'Некорректный электронный адрес!';
+//     }
 
-    return errors;
+//     return errors;
 
-}
+// }
 
 const Form = () => {
 
@@ -32,7 +33,14 @@ const Form = () => {
             text: 'text',
             terms: false,
         },
-        validate,
+        validationSchema: Yup.object({
+            name: Yup.string()
+                .min(2, 'Минимум 2 символа!')
+                .required('Обязательное поле!'),
+            email: Yup.string()
+                .email('Некорректный email адрес!')
+                .required('Обязательное поле!'),
+        }),
         onSubmit: values => {
             console.log(JSON.stringify(values, null, 2));
             console.log(JSON.stringify(formik, null, 2));
@@ -51,7 +59,8 @@ const Form = () => {
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
             />
-            {formik.errors.name && formik.touched.name ? <div>{formik.errors.name}</div> : <div> OK </div>}
+            {formik.errors.name && formik.touched.name ? <div>{formik.errors.name}</div> : <div> OK </div>
+            }
             <label htmlFor="email">Ваша почта</label>
             <input
                 id="email"
