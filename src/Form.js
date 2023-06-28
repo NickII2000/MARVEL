@@ -9,6 +9,12 @@ const validate = values => {
         errors.name = 'Минимум 2 символа для заполнения!';
     }
 
+    if (!values.email) {
+        errors.email = 'Обязательное поле!';
+    } else if (values.email.length < 2) {
+        errors.email = 'Минимум 2 символа для заполнения!';
+    }
+
 }
 
 const Form = () => {
