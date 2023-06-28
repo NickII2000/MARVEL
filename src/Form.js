@@ -5,7 +5,7 @@ const Form = () => {
     const formik = useFormik({
         initialValues: {
             name: 'Nick',
-            email: 'q@lkjlk',
+            email: 'qwerty@lkjlk',
             amount: 123,
             currency: '',
             text: 'text',
