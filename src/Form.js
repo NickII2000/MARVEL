@@ -93,10 +93,11 @@ const Form = () => {
             <label htmlFor="currency">Валюта</label>
             <select
                 id="currency"
-                name="currency">
+                name="currency"
                 value={formik.values.currency}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
+            >
                 <option value="">Выберите валюту</option>
                 <option value="USD">USD</option>
                 <option value="UAH">UAH</option>
