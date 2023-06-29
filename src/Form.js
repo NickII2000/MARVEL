@@ -29,7 +29,7 @@ const Form = () => {
             name: 'Nick',
             email: 'qwerty@react.l',
             amount: 123,
-            currency: '',
+            currency: 'RUB',
             text: 'text',
             terms: false,
         },
