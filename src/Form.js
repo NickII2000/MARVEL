@@ -113,7 +113,9 @@ const Form = () => {
             />
             {formik.errors.text && formik.touched.text ? <div className="error">{formik.errors.text}</div> : <div className="noerror"> OK </div>}
             <label className="checkbox">
-                <input name="terms" type="checkbox"
+                <input
+                    name="terms"
+                    type="checkbox"
                     value={formik.values.terms}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur} />
