@@ -46,7 +46,7 @@ const Form = () => {
             currency: Yup.string().required('Выберите валюту!'),
             text: Yup.string()
                 .min(10, 'Не менее 10 символов!'),
-            tems: Yup.boolean()
+            terms: Yup.boolean()
                 .required('Необходимо согласие!')
                 .oneOf([true], 'Необходимо согласие!'),
         }),
