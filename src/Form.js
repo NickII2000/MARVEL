@@ -30,7 +30,7 @@ const Form = () => {
             email: 'qwerty@react.l',
             amount: 123,
             currency: 'RUB',
-            text: 'text',
+            text: 'text567890',
             terms: false,
         },
         validationSchema: Yup.object({
