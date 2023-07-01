@@ -11,7 +11,7 @@ const CustomForm = () => {
                 email: 'qwerty@react.r',
                 amount: 123,
                 currency: 'RUB',
-                text: '12345678901',
+                text: '123456789012',
                 terms: false,
             }}
             validationSchema={Yup.object({
