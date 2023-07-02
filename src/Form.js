@@ -9,9 +9,9 @@ const CustomForm = () => {
             initialValues={{
                 name: 'Nick',
                 email: 'qwerty@react.r',
-                amount: 123000,
+                amount: 123,
                 currency: 'RUB',
-                text: '12345678901223',
+                text: '1234567890',
                 terms: false,
             }}
             validationSchema={Yup.object({
