@@ -9,7 +9,7 @@ const CustomForm = () => {
             initialValues={{
                 name: 'Nick',
                 email: 'qwerty@react.r',
-                amount: 1001,
+                amount: 100,
                 currency: 'RUB',
                 text: '1234567890',
                 terms: false,
