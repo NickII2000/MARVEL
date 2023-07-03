@@ -1,6 +1,19 @@
 // import { useFormik } from 'formik';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Formik, Form, Field, ErrorMessage, useField } from 'formik';
 import * as Yup from 'yup';
+
+const MyTextInput = ({ label, ...props }) => {
+    const [field, meta] = useField(props);
+    return (
+        <>
+            <label htmlFor={props.name}>{label}</label>
+            <input {...props} {...field} />
+            {meta.touched && meta.error ? (
+                <div className="error">{meta.error}</div>
+            ) : null}
+        </>
+    )
+};
 
 const CustomForm = () => {
 
@@ -9,7 +22,7 @@ const CustomForm = () => {
             initialValues={{
                 name: 'Nick',
                 email: 'qwerty@react.r',
-                amount: 100,
+                amount: 1001,
                 currency: 'RUB',
                 text: '1234567890',
                 terms: false,
@@ -35,8 +48,8 @@ const CustomForm = () => {
         >
             <Form className="form">
                 <h2>Отправить пожертвование</h2>
-                <label htmlFor="name">Ваше имя</label>
-                <Field
+                <MyTextInput
+                    label="Ваше имя"
                     id="name"
                     name="name"
                     type="text"
@@ -88,6 +101,6 @@ const CustomForm = () => {
 
         </Formik >
     )
-}
+};
 
 export default CustomForm;
