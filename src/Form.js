@@ -15,6 +15,22 @@ const MyTextInput = ({ label, ...props }) => {
     )
 };
 
+const MyCheckBox = ({ children, ...props }) => {
+    const [field, meta] = useField({ ...props, type: 'checkbox' });
+    return (
+        <>
+            <label className="checkbox">
+                <input type="checkbox" {...props} {...field} />
+                {children}
+            </label>
+
+            {meta.touched && meta.error ? (
+                <div className="error">{meta.error}</div>
+            ) : null}
+        </>
+    )
+};
+
 const CustomForm = () => {
 
     return (
@@ -54,14 +70,12 @@ const CustomForm = () => {
                     name="name"
                     type="text"
                 />
-                <ErrorMessage className="error" name="name" component="div" />
-                <label htmlFor="email">Ваша почта</label>
-                <Field
+                <MyTextInput
+                    label="Ваша почта"
                     id="email"
                     name="email"
                     type="email"
                 />
-                <ErrorMessage className="email" name="name" component="div" />
                 <label htmlFor="amount">Количество</label>
                 <Field
                     id="amount"
@@ -88,14 +102,11 @@ const CustomForm = () => {
                     as="textarea"
                 />
                 <ErrorMessage className="error" name="text" component="div" />
-                <label className="checkbox">
-                    <Field
-                        name="terms"
-                        type="checkbox"
-                    />
+                <MyCheckBox
+                    name="terms">
                     Соглашаетесь с политикой конфиденциальности?
-                </label>
-                <ErrorMessage className="error" name="terms" component="div" />
+                </MyCheckBox>
+
                 <button type="submit">Отправить</button>
             </Form >
 
