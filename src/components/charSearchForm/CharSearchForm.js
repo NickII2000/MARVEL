@@ -45,6 +45,7 @@ const CharSearchForm = () => {
                     charName: Yup.string().required('This field is required')
                 })}
                 onSubmit={({ charName }) => {
+                    console.log(charName);
                     updateChar(charName);
                 }}
             >
