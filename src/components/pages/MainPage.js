@@ -22,7 +22,7 @@ const MainPage = () => {
             <Helmet>
                 <meta
                     name="description"
-                    content="Marvel information portal"
+                    content="Marvel information portal !!!"
                 />
                 <title>Marvel information portal</title>
             </Helmet>
