@@ -49,6 +49,13 @@ const CharInfo = (props) => {
 
 }
 
+// Ожидание
+// Получение заказа
+// Доставка
+// Получение оплаты
+
+// FSM - finite-state machine
+
 const View = ({ char }) => {
     const { name, description, thumbnail, homepage, wiki, comics } = char;
     let imgStyle = { 'objectFit': 'cover' };
