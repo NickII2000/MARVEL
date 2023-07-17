@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import useMarvelService from '../../services/MarvelService';
 import Spinner from '../spinner/Spinner';
 import ErrorMessage from '../errorMessage/ErrorMessage';
-import Sceleton from '../skeleton/Skeleton'
+import Sceleton from '../skeleton/Skeleton';
 
 import './charInfo.scss';
 
@@ -37,7 +37,7 @@ const CharInfo = (props) => {
     const setContent = (process, char) => {
         switch (process) {
             case 'waiting':
-                return <Skeleton />;
+                return <Sceleton />;
                 break;
             case 'loading':
                 return <Spinner />;
@@ -53,17 +53,20 @@ const CharInfo = (props) => {
         }
     }
 
-    const sceleton = char || loading || error ? null : <Sceleton />;
-    const errorMessage = error ? <ErrorMessage /> : null;
-    const spinner = loading ? <Spinner /> : null;
-    const content = (!loading && !error && char) ? < View char={char} /> : null;
+    // const sceleton = char || loading || error ? null : <Sceleton />;
+    // const errorMessage = error ? <ErrorMessage /> : null;
+    // const spinner = loading ? <Spinner /> : null;
+    // const content = (!loading && !error && char) ? < View char={char} /> : null;
 
     return (
         <div className="char__info">
+            {/*
             {sceleton}
             {errorMessage}
             {spinner}
             {content}
+            */}
+            {setContent(process, char)}
         </div>
     )
 
