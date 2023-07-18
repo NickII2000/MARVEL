@@ -33,7 +33,7 @@ const ComicsList = () => {
     const [offset, setOffset] = useState(0);
     const [comicsEnded, setComicsEnded] = useState(false);
 
-    const { loading, error, getAllComics, process, setProcess } = useMarvelService();
+    const { getAllComics, process, setProcess } = useMarvelService();
 
     useEffect(() => {
         onRequest(offset, true);
@@ -84,12 +84,12 @@ const ComicsList = () => {
 
     return (
         <div className="comics__list">
-            {setContent(process, () => renderItems(comicsList), newItemLoading)}
             {/*             
             {errorMessage}
             {spinner}
             {items}
             */}
+            {setContent(process, () => renderItems(comicsList), newItemLoading)}
             <button
                 disabled={newItemLoading}
                 style={{ 'display': comicsEnded ? 'none' : 'block' }}

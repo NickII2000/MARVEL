@@ -132,12 +132,12 @@ const CharList = (props) => {
 
     return (
         <div className="char__list">
-            {setContent(process, () => renderItems(charList), newItemLoading)}
             {/*
             {errorMessage}
             {spinner}
             {items} 
             */}
+            {setContent(process, () => renderItems(charList), newItemLoading)}
             <button
                 className="button button__main button__long"
                 disabled={newItemLoading}
