@@ -48,7 +48,7 @@ const RandomChar = () => {
             {spinner}
             {content} 
             */}
-            {setContent(process, View, char)}
+            {setContent(process, char ? View : () => setProcess('error'), char)}
             <div className="randomchar__static">
                 <p className="randomchar__title">
                     Random character for today!<br />
