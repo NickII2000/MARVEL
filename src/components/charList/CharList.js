@@ -115,7 +115,7 @@ const CharList = (props) => {
         <div className="char__list">
             {setContent(process, () => renderItems(charList))}
             {/*
-             {errorMessage}
+            {errorMessage}
             {spinner}
             {items} 
             */}
