@@ -5,9 +5,28 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import useMarvelService from '../../services/MarvelService';
 import Spinner from '../spinner/Spinner';
 import ErrorMessage from '../errorMessage/ErrorMessage';
-import setContent from "../../utils/setContent";
+// import setContent from "../../utils/setContent";
 
 import './charList.scss';
+
+const setContent = (process, Component, newItemLoading) => {
+    switch (process) {
+        case 'waiting':
+            return <Spinner />;
+            break;
+        case 'loading':
+            return newItemLoading ? < Component /> : <Spinner />;
+            break;
+        case 'confirmed':
+            return < Component />;
+            break;
+        case 'error':
+            return <ErrorMessage />;
+            break;
+        default:
+            throw new Error('Unexpected process state');
+    }
+}
 
 const CharList = (props) => {
 
@@ -113,7 +132,7 @@ const CharList = (props) => {
 
     return (
         <div className="char__list">
-            {setContent(process, () => renderItems(charList))}
+            {setContent(process, () => renderItems(charList), newItemLoading)}
             {/*
             {errorMessage}
             {spinner}
