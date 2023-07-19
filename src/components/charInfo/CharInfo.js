@@ -32,19 +32,8 @@ const CharInfo = (props) => {
         setChar(char);
     }
 
-    // const sceleton = char || loading || error ? null : <Sceleton />;
-    // const errorMessage = error ? <ErrorMessage /> : null;
-    // const spinner = loading ? <Spinner /> : null;
-    // const content = (!loading && !error && char) ? < View char={char} /> : null;
-
     return (
         <div className="char__info">
-            {/*
-            {sceleton}
-            {errorMessage}
-            {spinner}
-            {content}
-            */}
             {setContent(process, View, char)}
         </div>
     )
