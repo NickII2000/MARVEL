@@ -77,18 +77,8 @@ const ComicsList = () => {
         )
     }
 
-    // const items = renderItems(comicsList);
-
-    // const errorMessage = error ? <ErrorMessage /> : null;
-    // const spinner = loading && !newItemLoading ? <Spinner /> : null;
-
     return (
         <div className="comics__list">
-            {/*             
-            {errorMessage}
-            {spinner}
-            {items}
-            */}
             {setContent(process, () => renderItems(comicsList), newItemLoading)}
             <button
                 disabled={newItemLoading}
