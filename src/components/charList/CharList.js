@@ -60,8 +60,6 @@ const CharList = (props) => {
         setCharEnded(charEnded => ended);
     }
 
-    // console.log('charList!!!');
-
     const itemRefs = useRef([]);
 
     const focusOnItem = (id) => {
@@ -119,24 +117,8 @@ const CharList = (props) => {
         )
     }
 
-    // const items = renderItems(charList);
-
-    // const errorMessage = error ? <ErrorMessage /> : null;
-    // const spinner = loading && !newItemLoading ? <Spinner /> : null;
-
-    // if (loading) {
-    //     import('./someFunc')
-    //         .then(obj => obj.default())
-    //         .catch();
-    // }
-
     return (
         <div className="char__list">
-            {/*
-            {errorMessage}
-            {spinner}
-            {items} 
-            */}
             {setContent(process, () => renderItems(charList), newItemLoading)}
             <button
                 className="button button__main button__long"
