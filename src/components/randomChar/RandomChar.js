@@ -1,6 +1,4 @@
 import { useState, useEffect } from 'react';
-// import Spinner from '../spinner/Spinner';
-// import ErrorMessage from '../errorMessage/ErrorMessage';
 import useMarvelService from '../../services/MarvelService';
 import setContent from "../../utils/setContent";
 
@@ -36,18 +34,8 @@ const RandomChar = () => {
             .then(() => setProcess('confirmed'));
     }
 
-    // const errorMessage = error ? <ErrorMessage /> : null;
-    // const spinner = loading ? <Spinner /> : null;
-    // const content = (!loading && !error && char) ? <View char={char} /> : null;
-
     return (
         <div className="randomchar">
-
-            {/* 
-            {errorMessage}
-            {spinner}
-            {content} 
-            */}
             {setContent(process, char ? View : () => setProcess('error'), char)}
             <div className="randomchar__static">
                 <p className="randomchar__title">
