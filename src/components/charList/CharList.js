@@ -122,7 +122,7 @@ const CharList = (props) => {
             {setContent(process, () => renderItems(charList), newItemLoading)}
             <button
                 className="button button__main button__long"
-                disabled={newItemLoading}
+                disabled={newItemLoading || process === 'loading'}
                 style={{ 'display': charEnded ? 'none' : 'block' }}
                 onClick={() => onRequest(offset)}>
                 <div className="inner">load more</div>
