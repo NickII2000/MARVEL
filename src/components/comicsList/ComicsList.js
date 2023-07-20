@@ -81,7 +81,7 @@ const ComicsList = () => {
         <div className="comics__list">
             {setContent(process, () => renderItems(comicsList), newItemLoading)}
             <button
-                disabled={newItemLoading}
+                disabled={newItemLoading || process === 'loading'}
                 style={{ 'display': comicsEnded ? 'none' : 'block' }}
                 className="button button__main button__long"
                 onClick={() => onRequest(offset)}>
