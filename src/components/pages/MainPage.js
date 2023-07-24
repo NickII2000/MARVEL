@@ -17,6 +17,7 @@ const MainPage = () => {
         setChar(id);
     }
 
+    console.log('Mane page');
     return (
         <>
             <Helmet>
