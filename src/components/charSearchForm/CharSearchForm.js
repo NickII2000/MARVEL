@@ -40,7 +40,7 @@ const CharSearchForm = () => {
         <div className="char__search-form">
             <Formik
                 initialValues={{
-                    charName: '195215556'
+                    charName: '1952155556'
                 }}
                 validationSchema={Yup.object({
                     charName: Yup.string().required('This field is required')
