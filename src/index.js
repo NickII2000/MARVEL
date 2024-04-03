@@ -98,3 +98,20 @@ ReactDOM.render(
 );
 
 */
+
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+
+import './style/style.scss';
+
+console.log('Hello, Redux!');
+
+ReactDOM
+    .createRoot(document.getElementById('root'))
+    .render(
+        // <React.StrictMode>
+        <>
+            12345
+        </>
+        // </React.StrictMode>
+    );
