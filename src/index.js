@@ -103,7 +103,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createStore } from 'redux';
 
-import './style/style.scss';
+// import './style/style.scss';
 
 // console.log('Hello, Redux!');
 // const initialState = 0;
@@ -128,17 +128,22 @@ const reducer = (state = 0, action) => {
 
 const store = createStore(reducer);
 
+store.subscribe(() => {
+    console.log(store.getState());
+});
+
 store.dispatch({ type: 'INC' });
 store.dispatch({ type: 'INC' });
 
-console.log(store.getState());
+
+
 
 ReactDOM
     .createRoot(document.getElementById('root'))
     .render(
         // <React.StrictMode>
         <>
-            Redux-Excercise-190
+            {/* Redux-Excercise-190 */}
         </>
         // </React.StrictMode>
     );
