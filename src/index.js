@@ -101,11 +101,12 @@ ReactDOM.render(
 
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { createStore } from 'redux';
 
 import './style/style.scss';
 
 // console.log('Hello, Redux!');
-const initialState = 0;
+// const initialState = 0;
 
 const reducer = (state = 0, action) => {
     switch (action.type) {
@@ -116,14 +117,21 @@ const reducer = (state = 0, action) => {
     }
 };
 
-let state = reducer(undefined, { type: 'INC' });
-console.log(state);
-state = reducer(state, { type: 'INC' });
-console.log(state);
-state = reducer(state, { type: 'INC' });
-console.log(state);
-state = reducer(state, { type: 'INC' });
-console.log(state);
+// let state = reducer(undefined, { type: 'INC' });
+// console.log(state);
+// state = reducer(state, { type: 'INC' });
+// console.log(state);
+// state = reducer(state, { type: 'INC' });
+// console.log(state);
+// state = reducer(state, { type: 'INC' });
+// console.log(state);
+
+const store = createStore(reducer);
+
+store.dispatch({ type: 'INC' });
+store.dispatch({ type: 'INC' });
+
+console.log(store.getState());
 
 ReactDOM
     .createRoot(document.getElementById('root'))
