@@ -104,14 +104,33 @@ import ReactDOM from 'react-dom/client';
 
 import './style/style.scss';
 
-console.log('Hello, Redux!');
+// console.log('Hello, Redux!');
+const initialState = 0;
+
+const reducer = (state = 0, action) => {
+    switch (action.type) {
+        case 'INC':
+            return state + 1;
+        default:
+            return state;
+    }
+};
+
+let state = reducer(undefined, { type: 'INC' });
+console.log(state);
+state = reducer(state, { type: 'INC' });
+console.log(state);
+state = reducer(state, { type: 'INC' });
+console.log(state);
+state = reducer(state, { type: 'INC' });
+console.log(state);
 
 ReactDOM
     .createRoot(document.getElementById('root'))
     .render(
         // <React.StrictMode>
         <>
-            12345
+            Redux-Excercise-190
         </>
         // </React.StrictMode>
     );
