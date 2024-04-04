@@ -132,11 +132,12 @@ store.subscribe(() => {
     console.log(store.getState());
 });
 
-store.dispatch({ type: 'INC' });
-store.dispatch({ type: 'INC' });
-
-
-
+document.getElementById('inc').addEventListener('click', () => {
+    store.dispatch({ type: 'INC' });
+});
+document.getElementById('dec').addEventListener('click', () => {
+    store.dispatch({ type: 'DEC' });
+});
 
 ReactDOM
     .createRoot(document.getElementById('root'))
