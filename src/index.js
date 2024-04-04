@@ -128,9 +128,11 @@ const reducer = (state = 0, action) => {
 
 const store = createStore(reducer);
 
-store.subscribe(() => {
-    console.log(store.getState());
-});
+store.subscribe(update);
+
+const update = () => {
+    document.getElementById('counter').textContent = store.getState();
+};
 
 document.getElementById('inc').addEventListener('click', () => {
     store.dispatch({ type: 'INC' });
