@@ -105,7 +105,7 @@ import { createStore } from 'redux';
 
 // import './style/style.scss';
 
-// console.log('Hello, Redux!');
+console.log('Hello, Redux!');
 const initialState = { value: 0 };
 
 const reducer = (state = initialState, action) => {
