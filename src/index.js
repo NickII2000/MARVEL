@@ -101,8 +101,8 @@ ReactDOM.render(
 
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { createStore } from 'redux';
-
+// import { createStore } from 'redux';
+import { legacy_createStore as createStore } from 'redux';
 // import './style/style.scss';
 
 // console.log('Hello, Redux!');
