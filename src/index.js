@@ -117,14 +117,15 @@ const update = () => {
 
 subscribe(update);
 
-document.getElementById('inc').addEventListener('click', () => {
-    dispatch(inc());
-});
-document.getElementById('dec').addEventListener('click', () => {
-    dispatch(dec());
-});
+const incDispatch = () => dispatch(inc());
+const decDispatch = () => dispatch(dec());
+const rndDispatch = (value) => dispatch(rnd(value));
+
+document.getElementById('inc').addEventListener('click', incDispatch);
+document.getElementById('dec').addEventListener('click', decDispatch);
 document.getElementById('rnd').addEventListener('click', () => {
-    dispatch(rnd());
+    const value = Math.floor(Math.random() * 10 + 1);
+    rndDispatch(value);
 });
 
 ReactDOM
