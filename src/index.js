@@ -104,23 +104,27 @@ import ReactDOM from 'react-dom/client';
 // import { createStore } from 'redux';
 import { legacy_createStore as createStore } from 'redux';
 // import './style/style.scss';
+import reducer from './reducer';
+import { inc, dec, rnd } from './actions';
 
 const store = createStore(reducer);
 
+const { dispatch, subscribe, getState } = store;
+
 const update = () => {
-    document.getElementById('counter').textContent = store.getState().value;
+    document.getElementById('counter').textContent = getState().value;
 };
 
-store.subscribe(update);
+subscribe(update);
 
 document.getElementById('inc').addEventListener('click', () => {
-    store.dispatch(inc());
+    dispatch(inc());
 });
 document.getElementById('dec').addEventListener('click', () => {
-    store.dispatch(dec());
+    dispatch(dec());
 });
 document.getElementById('rnd').addEventListener('click', () => {
-    store.dispatch(rnd());
+    dispatch(rnd());
 });
 
 ReactDOM
