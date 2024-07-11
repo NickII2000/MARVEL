@@ -105,7 +105,6 @@ import ReactDOM from 'react-dom/client';
 import { legacy_createStore as createStore } from 'redux';
 // import './style/style.scss';
 
-// console.log('Hello, Redux!');
 const initialState = { value: 0 };
 
 const reducer = (state = initialState, action) => {
@@ -120,15 +119,6 @@ const reducer = (state = initialState, action) => {
             return state;
     }
 };
-
-// let state = reducer(undefined, { type: 'INC' });
-// console.log(state);
-// state = reducer(state, { type: 'INC' });
-// console.log(state);
-// state = reducer(state, { type: 'INC' });
-// console.log(state);
-// state = reducer(state, { type: 'INC' });
-// console.log(state);
 
 const store = createStore(reducer);
 
