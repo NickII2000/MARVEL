@@ -128,13 +128,6 @@ const update = () => {
 
 store.subscribe(update);
 
-const inc = () => ({ type: 'INC' });
-const dec = () => ({ type: 'DEC' });
-const rnd = () => {
-    const value = Math.floor(Math.random() * 10);
-    return { type: 'RND', payload: value }
-};
-
 document.getElementById('inc').addEventListener('click', () => {
     store.dispatch(inc());
 });
