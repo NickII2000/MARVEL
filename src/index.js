@@ -108,39 +108,32 @@ import reducer from './reducer';
 // import { inc, dec, rnd } from './actions';
 import * as actions from './actions';
 
-import Counter from './counter';
+import Counter from './Counter';
 
 const store = createStore(reducer);
 
 const { dispatch, subscribe, getState } = store;
 
-// const update = () => {
-//     document.getElementById('counter').textContent = getState().value;
-// };
-
-subscribe(update);
-
-// const bindActionCreator = (creator, dispatch) => (...args) => {
-//     dispatch(creator(args));
-// };
-
 const { inc, dec, rnd } = bindActionCreators(actions, dispatch);
-// const decDispatch = bindActionCreators(dec, dispatch);
-// const rndDispatch = bindActionCreators(rnd, dispatch);
 
-// document.getElementById('inc').addEventListener('click', inc);
-// document.getElementById('dec').addEventListener('click', dec);
-// document.getElementById('rnd').addEventListener('click', () => {
-//     const value = Math.floor(Math.random() * 10 - 5);
-//     rnd(value);
-// });
-
-ReactDOM
-    .createRoot(document.getElementById('root'))
-    .render(
-        // <React.StrictMode>
-        <>
-            {/* Redux-Excercise-190 */}
-        </>
-        // </React.StrictMode>
-    );
+const update = () => {
+    ReactDOM
+        .createRoot(document.getElementById('root'))
+        .render(
+            <React.StrictMode>
+                <>
+                    <Counter
+                        counter={getState().value}
+                        inc={inc}
+                        dec={dec}
+                        rnd={() => {
+                            const value = Math.floor(Math.random() * 10 - 5);
+                            rnd(value);
+                        }}
+                    />
+                </>
+            </React.StrictMode >
+        );
+};
+update();
+subscribe(update);
