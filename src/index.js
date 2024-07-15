@@ -108,6 +108,8 @@ import reducer from './reducer';
 // import { inc, dec, rnd } from './actions';
 import * as actions from './actions';
 
+import Counter from './counter';
+
 const store = createStore(reducer);
 
 const { dispatch, subscribe, getState } = store;
