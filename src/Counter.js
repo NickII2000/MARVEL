@@ -1,4 +1,4 @@
-const Counter = () => {
+const Counter = (counter, inc, dec, rnd) => {
     return (
         <div class="jumbotron">
             <h1>0</h1>
