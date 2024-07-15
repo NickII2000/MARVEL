@@ -1,11 +1,11 @@
 const Counter = (counter, inc, dec, rnd) => {
     return (
         <div class="jumbotron">
-            <h1>0</h1>
+            <h1>{counter}</h1>
             </br>
-            <button className="btn btn-primary">DEC</button>
-            <button className="btn btn-primary">INC</button>
-            <button className="btn btn-primary">RND</button>
+            <button onClick={dec} className="btn btn-primary">DEC</button>
+            <button onClick={inc} className="btn btn-primary">INC</button>
+            <button onClick={rnd} className="btn btn-primary">RND</button>
         </div >
     )
 };
