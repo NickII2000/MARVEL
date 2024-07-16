@@ -107,8 +107,9 @@ import { legacy_createStore as createStore, bindActionCreators } from 'redux';
 import reducer from './reducer';
 // import { inc, dec, rnd } from './actions';
 import * as actions from './actions';
+import { Provider } from 'react-redux';
 
-import Counter from './components/Counter';
+import App from './components/App';
 
 const store = createStore(reducer);
 
@@ -121,17 +122,17 @@ const update = () => {
         .createRoot(document.getElementById('root'))
         .render(
             <React.StrictMode>
-                <>
-                    <Counter
-                        counter={getState().value}
-                        inc={inc}
-                        dec={dec}
-                        rnd={() => {
-                            const value = Math.floor(Math.random() * 10 - 5);
-                            rnd(value);
-                        }}
-                    />
-                </>
+
+                {/* <Counter
+                    counter={getState().value}
+                    inc={inc}
+                    dec={dec}
+                    rnd={() => {
+                        const value = Math.floor(Math.random() * 10 - 5);
+                        rnd(value);
+                    }}
+                /> */}
+                <App />
             </React.StrictMode >
         );
 };
