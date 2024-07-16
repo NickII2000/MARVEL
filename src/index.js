@@ -108,7 +108,7 @@ import reducer from './reducer';
 // import { inc, dec, rnd } from './actions';
 import * as actions from './actions';
 
-import Counter from './Counter';
+import Counter from './components/Counter';
 
 const store = createStore(reducer);
 
