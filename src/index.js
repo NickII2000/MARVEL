@@ -106,24 +106,24 @@ import { legacy_createStore as createStore, bindActionCreators } from 'redux';
 // import './style/style.scss';
 import reducer from './reducer';
 // import { inc, dec, rnd } from './actions';
-import * as actions from './actions';
+// import * as actions from './actions';
 import { Provider } from 'react-redux';
 
 import App from './components/App';
 
 const store = createStore(reducer);
 
-const { dispatch, subscribe, getState } = store;
+// const { dispatch, subscribe, getState } = store;
 
-const { inc, dec, rnd } = bindActionCreators(actions, dispatch);
+// const { inc, dec, rnd } = bindActionCreators(actions, dispatch);
 
-const update = () => {
-    ReactDOM
-        .createRoot(document.getElementById('root'))
-        .render(
-            <React.StrictMode>
+// const update = () => {
+ReactDOM
+    .createRoot(document.getElementById('root'))
+    .render(
+        <React.StrictMode>
 
-                {/* <Counter
+            {/* <Counter
                     counter={getState().value}
                     inc={inc}
                     dec={dec}
@@ -132,9 +132,12 @@ const update = () => {
                         rnd(value);
                     }}
                 /> */}
+            <Provider store={store}>
                 <App />
-            </React.StrictMode >
-        );
-};
-update();
-subscribe(update);
+            </Provider>
+
+        </React.StrictMode >
+    );
+// };
+// update();
+// subscribe(update);
