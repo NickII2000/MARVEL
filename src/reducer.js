@@ -1,4 +1,4 @@
-const initialState = { value: 10123 };
+const initialState = { value: 777 };
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
